@@ -8,7 +8,9 @@ import { Modal } from '@/components';
 const Schedule = ({ data, movieTitle, movieSlug }: { data: TheatreType[], movieTitle: string, movieSlug: string }) => {
   const [cine, setCine] = useState<TheatreType | undefined>();
   const [day, setDay] = useState<ScheduleType | undefined>();
-  const [typeAndHour, setTypeAndHour] = useState<string | undefined>();
+  const [type, setType] = useState('')
+  const [hour, setHour] = useState('')
+
   const [showModal, setShowModal] = useState(false)
 
   const handleSelectChange = (event: ChangeEvent<HTMLSelectElement>) => {
@@ -18,7 +20,7 @@ const Schedule = ({ data, movieTitle, movieSlug }: { data: TheatreType[], movieT
   };
 
   const handleBuyClick = (slug: string) => {
-    window.location.href = `/ticketera?slug=${slug}?cine=${cine}?day=${day}`;
+    window.location.href = `/ticketera?slug=${slug}?cine=${cine!.name}?day=${day!.day}?type=${type}?hour=${hour}`;
   }
 
   return (
@@ -51,9 +53,9 @@ const Schedule = ({ data, movieTitle, movieSlug }: { data: TheatreType[], movieT
                   <h2>{item.type}</h2>
                   {item.hours.map((hourItem) => (
                     <button
-                      onClick={() => setTypeAndHour(item.type + ' ' + hourItem)}
+                      onClick={() => { setType(item.type); setHour(hourItem) }}
                       className={cs(s.container__button, {
-                        [s.container__button__selected]: typeAndHour === item.type + ' ' + hourItem
+                        [s.container__button__selected]: type === item.type && hour === hourItem
                       })}
                       key={hourItem}>
                       {hourItem}
@@ -63,7 +65,7 @@ const Schedule = ({ data, movieTitle, movieSlug }: { data: TheatreType[], movieT
               ))}
           </div>
         )}
-        <button className={cs(s.buy_button, { [s.buy_button__disabled]: !typeAndHour })} onClick={() => setShowModal(true)}>COMPRAR</button>
+        <button className={cs(s.buy_button, { [s.buy_button__disabled]: !hour })} onClick={() => setShowModal(true)}>COMPRAR</button>
       </div>
       {showModal && (
         <Modal>
@@ -71,7 +73,7 @@ const Schedule = ({ data, movieTitle, movieSlug }: { data: TheatreType[], movieT
             <button className={s.modal__close_btn} onClick={() => setShowModal(false)}>x</button>
             <h2>ATENCION!</h2>
             <p>
-              Su seleccion es {movieTitle}, {cine!.name}, {typeAndHour}, {day?.day}
+              Su seleccion es {movieTitle}, {cine!.name}, {day?.day}, {type}, {hour}
             </p>
             <hr />
             <button className={s.buy_button} onClick={() => handleBuyClick(movieSlug)}>COMPRAR</button>

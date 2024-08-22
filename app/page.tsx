@@ -1,10 +1,10 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import s from './page.module.css';
+import { Billboard } from '@/components';
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-     <h1>main</h1>
+    <main className={s.main}>
+      <Billboard />
     </main>
   );
 }

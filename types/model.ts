@@ -22,3 +22,10 @@ export interface MovieType {
   age: string;
   theatre: TheatreType[];
 }
+export interface SelectedMovieType {
+  slug: string;
+  cine: string;
+  day: string;
+  type: string;
+  hour: string;
+}

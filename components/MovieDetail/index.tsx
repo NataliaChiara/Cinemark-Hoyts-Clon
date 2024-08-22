@@ -8,8 +8,7 @@ const MovieDetail = ({ movie }: { movie: MovieType }) => {
 
   return (
     <div className={s.container}>
-      <Schedule data={theatre} movieTitle={title} movieSlug={slug} />
-
+      <Schedule data={theatre} movieSlug={slug} />
       <div className={s.container__poster}>
         <Image width={190} height={285} alt={slug} src={poster} />
         <span className={s.container__poster__age}>{age}</span>

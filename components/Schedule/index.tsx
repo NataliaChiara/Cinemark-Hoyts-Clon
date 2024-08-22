@@ -5,7 +5,7 @@ import s from './Schedule.module.css';
 import { TheatreType, ScheduleType } from '@/types/model';
 import { Modal } from '@/components';
 
-const Schedule = ({ data, movieTitle, movieSlug }: { data: TheatreType[], movieTitle: string, movieSlug: string }) => {
+const Schedule = ({ data, movieSlug }: { data: TheatreType[], movieSlug: string }) => {
   const [cine, setCine] = useState<TheatreType | undefined>();
   const [day, setDay] = useState<ScheduleType | undefined>();
   const [type, setType] = useState('')
@@ -19,8 +19,8 @@ const Schedule = ({ data, movieTitle, movieSlug }: { data: TheatreType[], movieT
     setDay(selectedCine?.schedule[0]);
   };
 
-  const handleBuyClick = (slug: string) => {
-    window.location.href = `/ticketera?slug=${slug}?cine=${cine!.name}?day=${day!.day}?type=${type}?hour=${hour}`;
+  const handleBuyClick = () => {
+    window.location.href = `http://localhost:3000/ticketera?slug=${movieSlug}&cine=${cine}&day=${day}&type=${type}&hour=${hour}`;
   }
 
   return (
@@ -73,10 +73,10 @@ const Schedule = ({ data, movieTitle, movieSlug }: { data: TheatreType[], movieT
             <button className={s.modal__close_btn} onClick={() => setShowModal(false)}>x</button>
             <h2>ATENCION!</h2>
             <p>
-              Su seleccion es {movieTitle}, {cine!.name}, {day?.day}, {type}, {hour}
+              Su seleccion es {movieSlug.replace('-', ' ').toUpperCase()}, {cine!.name}, {day?.day}, {type}, {hour}
             </p>
             <hr />
-            <button className={s.buy_button} onClick={() => handleBuyClick(movieSlug)}>COMPRAR</button>
+            <button className={s.buy_button} onClick={handleBuyClick}>COMPRAR</button>
           </div>
         </Modal>
       )}

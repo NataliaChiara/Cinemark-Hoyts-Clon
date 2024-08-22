@@ -16,20 +16,57 @@
       border-color: white;
     }
   }
+}
 
-  &__buy_button {
-    border-radius: 15px;
-    width: 200px;
-    height: 50px;
-    font-weight: bold;
-    background-color: white;
+.buy_button {
+  border-radius: 15px;
+  width: 200px;
+  height: 45px;
+  font-weight: bold;
+  border: none;
+  color: black;
+  background-color: yellow;
+  pointer-events: all;
+
+  &__disabled {
     color: gray;
+    background-color: white;
     pointer-events: none;
-
-    &__abled {
-      color: black;
-      background-color: yellow;
-      pointer-events: all;
-    }
   }
+}
+
+.modal {
+  padding: 50px 0;
+  background-color: white;
+  color: black;
+  text-align: center;
+  position: relative;
+
+  &__close_btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    border-color: gray;
+    border-radius: 50%;
+  }
+
+  & p {
+    margin: 10px auto;
+    width: 60%;
+    color: gray;
+  }
+
+  & hr {
+    width: 80%;
+    margin: 50px auto 30px auto;
+  }
+}
+
+& button,
+& select {
+  cursor: pointer;
 }

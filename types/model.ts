@@ -1,31 +1,31 @@
-export interface ScheduleType {
-  day: string;
-  theatreType: {
-    type: string;
-    hours: string[];
-  }[];
-}
-
-export interface TheatreType {
-  name: string;
-  schedule: ScheduleType[];
-}
-
-export interface MovieType {
+export interface PeliculaType {
   slug: string;
-  title: string;
+  titulo: string;
   sinopsis: string;
-  genre: string;
-  duration: string;
+  genero: string;
+  duracion: string;
+  director: string;
   trailer: string;
   poster: string;
-  age: string;
-  theatre: TheatreType[];
+  edad: string;
 }
-export interface SelectedMovieType {
-  slug: string;
-  cine: string;
-  day: string;
-  type: string;
-  hour: string;
+
+export interface FuncionesType {
+  tipo: string;
+  sala: string;
+  horarios: string[];
+}
+
+export interface CronogramaType {
+  dia: string;
+  funciones: FuncionesType[];
+}
+
+export interface CinesType {
+  nombre: string;
+  direccion: string;
+  peliculas: {
+    slug: string;
+    cronograma: CronogramaType[];
+  }[];
 }

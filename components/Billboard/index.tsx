@@ -1,20 +1,22 @@
 import { Dispatch, SetStateAction } from 'react';
 import Image from 'next/image';
 import s from './Billboard.module.css';
-import { data } from '@/lib/dataset';
-import { MovieType } from '@/types/model';
+import { peliculas } from '@/lib/dataset';
+import { PeliculaType } from '@/types/model';
 
-const Billboard = ({ setMovie }: { setMovie: Dispatch<SetStateAction<MovieType | undefined>> }) => {
-
-
+const Billboard = ({
+  setMovie
+}: {
+  setMovie: Dispatch<SetStateAction<PeliculaType | undefined>>;
+}) => {
   return (
     <div className={s.container}>
-      {data.map((movie) => {
-        const { title, poster, slug } = movie;
+      {peliculas.map((pelicula) => {
+        const { titulo, poster, slug } = pelicula;
         return (
-          <div className={s.container__movie} key={slug} onClick={() => setMovie(movie)}>
+          <div className={s.container__movie} key={slug} onClick={() => setMovie(pelicula)}>
             <Image width={190} height={285} alt={slug} src={poster} />
-            <h1>{title}</h1>
+            <h1>{titulo}</h1>
           </div>
         );
       })}

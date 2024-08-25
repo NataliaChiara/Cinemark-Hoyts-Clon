@@ -54,16 +54,20 @@ export const cines: CineType[] = [
             dia: '22/08',
             funciones: [
               {
-                id: 'id1',
                 tipo: '2D SUBTITULADA',
                 sala: '1',
-                horarios: ['15:00', '20:00']
+                horarios: [
+                  { id: 'id1', hora: '15:00' },
+                  { id: 'id2', hora: '20:00' }
+                ]
               },
               {
-                id: 'id2',
                 tipo: '2D CASTELLANO',
                 sala: '2',
-                horarios: ['16:00', '21:00']
+                horarios: [
+                  { id: 'id3', hora: '16:00' },
+                  { id: 'id4', hora: '21:00' }
+                ]
               }
             ]
           },
@@ -71,16 +75,20 @@ export const cines: CineType[] = [
             dia: '23/08',
             funciones: [
               {
-                id: 'id3',
                 tipo: '2D SUBTITULADA',
                 sala: '1',
-                horarios: ['15:00', '20:00']
+                horarios: [
+                  { id: 'id5', hora: '15:00' },
+                  { id: 'id6', hora: '20:00' }
+                ]
               },
               {
-                id: 'id4',
                 tipo: '2D CASTELLANO',
                 sala: '2',
-                horarios: ['16:00', '21:00']
+                horarios: [
+                  { id: 'id7', hora: '16:00' },
+                  { id: 'id8', hora: '21:00' }
+                ]
               }
             ]
           }
@@ -99,16 +107,20 @@ export const cines: CineType[] = [
             dia: '22/08',
             funciones: [
               {
-                id: 'id5',
                 tipo: '2D SUBTITULADA',
                 sala: '1',
-                horarios: ['15:00', '20:00']
+                horarios: [
+                  { id: 'id9', hora: '15:00' },
+                  { id: 'id10', hora: '20:00' }
+                ]
               },
               {
-                id: 'id6',
                 tipo: '2D CASTELLANO',
                 sala: '2',
-                horarios: ['16:00', '21:00']
+                horarios: [
+                  { id: 'id11', hora: '16:00' },
+                  { id: 'id12', hora: '21:00' }
+                ]
               }
             ]
           },
@@ -116,16 +128,20 @@ export const cines: CineType[] = [
             dia: '23/08',
             funciones: [
               {
-                id: 'id7',
                 tipo: '2D SUBTITULADA',
                 sala: '1',
-                horarios: ['15:00', '20:00']
+                horarios: [
+                  { id: 'id13', hora: '15:00' },
+                  { id: 'id14', hora: '20:00' }
+                ]
               },
               {
-                id: 'id8',
                 tipo: '2D CASTELLANO',
                 sala: '2',
-                horarios: ['16:00', '21:00']
+                horarios: [
+                  { id: 'id15', hora: '16:00' },
+                  { id: 'id16', hora: '21:00' }
+                ]
               }
             ]
           }

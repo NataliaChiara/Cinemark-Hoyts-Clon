@@ -2,7 +2,7 @@ import { ChangeEvent } from 'react';
 import { useState } from 'react';
 import cs from 'classnames';
 import s from './Schedule.module.css';
-import { DiaType, FuncionType, SelectedFuncionType } from '@/types/model';
+import { DiaType, FuncionType } from '@/types/model';
 import { Modal } from '@/components';
 import { cines } from '@/lib/dataset';
 
@@ -11,7 +11,7 @@ const Schedule = ({ movieSlug }: { movieSlug: string }) => {
   const [days, setDays] = useState<DiaType[] | undefined>();
   const [funciones, setFunciones] = useState<FuncionType[] | undefined>();
   const [selectedDay, setSelectedDay] = useState('');
-  const [selectedFunction, setSelectedFunction] = useState<SelectedFuncionType | undefined>();
+  const [selectedFunctionId, setSelectedFunctionId] = useState('');
   const [showModal, setShowModal] = useState(false);
 
   const handleSelectCine = (event: ChangeEvent<HTMLSelectElement>) => {
@@ -30,7 +30,7 @@ const Schedule = ({ movieSlug }: { movieSlug: string }) => {
   };
 
   const handleBuyClick = () => {
-    window.location.href = `http://localhost:3000/ticketera?functionId=${selectedFunction?.id}&cine=${cineName}`;
+    window.location.href = `http://localhost:3000/ticketera?functionId=${selectedFunctionId}&cine=${cineName}`;
   };
 
   return (
@@ -71,19 +71,12 @@ const Schedule = ({ movieSlug }: { movieSlug: string }) => {
                 <div className={s.container__hours__type__buttons}>
                   {item.horarios.map((hora) => (
                     <button
-                      onClick={() =>
-                        setSelectedFunction({
-                          id: item.id,
-                          tipo: item.tipo,
-                          sala: item.sala,
-                          hora: hora
-                        })
-                      }
+                      onClick={() => setSelectedFunctionId(hora.id)}
                       className={cs(s.container__button, {
-                        [s.container__button__selected]: selectedFunction?.hora === hora
+                        [s.container__button__selected]: selectedFunctionId === hora.id
                       })}
-                      key={hora}>
-                      {hora}
+                      key={hora.id}>
+                      {hora.hora}
                     </button>
                   ))}
                 </div>
@@ -92,7 +85,7 @@ const Schedule = ({ movieSlug }: { movieSlug: string }) => {
           </div>
         )}
         <button
-          className={cs(s.buy_button, { [s.buy_button__disabled]: !selectedFunction })}
+          className={cs(s.buy_button, { [s.buy_button__disabled]: !selectedFunctionId })}
           onClick={() => setShowModal(true)}>
           COMPRAR
         </button>
@@ -106,8 +99,8 @@ const Schedule = ({ movieSlug }: { movieSlug: string }) => {
             </button>
             <h2>ATENCION!</h2>
             <p>
-              Su seleccion es {movieSlug.replace('-', ' ').toUpperCase()}, {selectedFunction?.tipo},{' '}
-              {selectedDay}, {selectedFunction?.hora}hs.
+              Su seleccion es {movieSlug.replace('-', ' ').toUpperCase()}, - FALTA TIPO{' '}
+              {selectedDay} FALTA HORA.
             </p>
             <hr />
             <button className={s.buy_button} onClick={handleBuyClick}>

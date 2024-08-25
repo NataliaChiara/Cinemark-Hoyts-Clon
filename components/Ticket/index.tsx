@@ -1,25 +1,23 @@
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import s from './Ticket.module.css';
-import { SelectedMovieType } from '@/types/model';
-import { data } from '@/lib/dataset';
+import { TicketType } from '@/types/model';
+import { peliculas } from '@/lib/dataset';
 
-const Ticket = ({ SelectedMovie }: { SelectedMovie: SelectedMovieType }) => {
+const Ticket = ({ SelectedMovie }: { SelectedMovie: TicketType }) => {
   const [movieData, setMovieData] = useState({
     poster: '',
-    title: '',
-    age: ''
+    titulo: '',
+    edad: ''
   });
 
   useEffect(() => {
-    const movieData = data.find((movie) => movie.slug === SelectedMovie.slug);
+    const movieData = peliculas.find((movie) => movie.slug === SelectedMovie.slug);
     if (movieData) {
-      console.log(movieData, 'moviedata', SelectedMovie.slug, 'slug');
-
       setMovieData({
         poster: movieData.poster,
-        title: movieData.title,
-        age: movieData.age
+        titulo: movieData.titulo,
+        edad: movieData.edad
       });
     }
   }, [SelectedMovie.slug]);
@@ -28,14 +26,18 @@ const Ticket = ({ SelectedMovie }: { SelectedMovie: SelectedMovieType }) => {
     <div className={s.container}>
       <Image src={movieData.poster} alt={SelectedMovie.slug} width={190} height={285} />
       <div>
-        <h1>{movieData.title}</h1>
-        <span>{movieData.age}</span>
+        <h1>{movieData.titulo}</h1>
+        <span>{movieData.edad}</span>
         <p>
-          {SelectedMovie.type}
+          {SelectedMovie.tipo}
           <br />
-          {SelectedMovie.adress}
+          {SelectedMovie.nombre}
           <br />
-          <strong>{SelectedMovie.day + ' ' + SelectedMovie.hour}</strong>
+          {'Sala ' + SelectedMovie.sala}
+          <br />
+          {SelectedMovie.direccion}
+          <br />
+          <strong>{SelectedMovie.dia + ' ' + SelectedMovie.hora}</strong>
         </p>
       </div>
     </div>

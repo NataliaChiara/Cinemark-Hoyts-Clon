@@ -4,41 +4,42 @@ import { useSearchParams } from 'next/navigation';
 import s from './page.module.css';
 import { Ticket } from '@/components';
 import { cines } from '@/lib/dataset';
-import { CineType, InfoTotalType } from '@/types/model';
+import { CineType, TicketType } from '@/types/model';
 
 export default function Ticketera() {
-  const [selectedMovie, setSelectedMovie] = useState<InfoTotalType | undefined>();
+  const [selectedMovie, setSelectedMovie] = useState<TicketType | undefined>();
 
   const searchParams = useSearchParams();
   const functionId = searchParams.get('functionId');
   const cine = searchParams.get('cine');
 
   function obtenerInfoPorId(objeto: CineType, idBuscado: string) {
-    let resultado: InfoTotalType = {
-      tipo: '',
-      sala: '',
+    let resultado: TicketType = {
       hora: '',
+      sala: '',
+      tipo: '',
       dia: '',
       slug: '',
       direccion: '',
       nombre: ''
     };
 
-    resultado.nombre = objeto.nombre;
-    resultado.direccion = objeto.direccion;
-
     for (let pelicula of objeto.peliculas) {
-      resultado.slug = pelicula.slug;
-
-      for (let dias of pelicula.dias) {
-        for (let funcion of dias.funciones) {
-          if (funcion.id === idBuscado) {
-            resultado = {
-              ...resultado,
-              ...funcion,
-              dia: dias.dia
-            };
-            return resultado;
+      for (let dia of pelicula.dias) {
+        for (let funcion of dia.funciones) {
+          for (let horario of funcion.horarios) {
+            if (horario.id === idBuscado) {
+              resultado = {
+                hora: horario.hora,
+                sala: funcion.sala,
+                tipo: funcion.tipo,
+                dia: dia.dia,
+                slug: pelicula.slug,
+                direccion: objeto.direccion,
+                nombre: objeto.nombre
+              };
+              return resultado;
+            }
           }
         }
       }
@@ -53,21 +54,14 @@ export default function Ticketera() {
       const selectedCine = cines.find((item) => item.nombre === cineName);
 
       const infoTotal = obtenerInfoPorId(selectedCine!, functionId);
-      console.log(infoTotal);
-      // const newSelectedMovie = {
-      //   slug: slug,
-      //   cine: cine,
-      //   adress: adress,
-      //   day: day,
-      //   type: type,
-      //   hour: hour
-      // };
-      // setSelectedMovie(newSelectedMovie);
+      if (infoTotal) {
+        setSelectedMovie(infoTotal);
+      }
     }
   }, [searchParams, cine, functionId]);
 
   return (
     // aca deberia comprobar si la persona esta logueada
-    <div className={s.ticketera}>{/* <Ticket SelectedMovie={selectedMovie} /> */}</div>
+    <div className={s.ticketera}>{selectedMovie && <Ticket SelectedMovie={selectedMovie} />}</div>
   );
 }

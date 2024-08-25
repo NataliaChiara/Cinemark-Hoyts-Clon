@@ -10,22 +10,40 @@ export interface PeliculaType {
   edad: string;
 }
 
-export interface FuncionesType {
+export interface InfoTotalType {
+  tipo: string;
+  sala: string;
+  hora: string;
+  dia: string;
+  slug: string;
+  direccion: string;
+  nombre: string;
+}
+
+export interface SelectedFuncionType {
+  id: string;
+  tipo: string;
+  sala: string;
+  hora: string;
+}
+
+export interface FuncionType {
+  id: string;
   tipo: string;
   sala: string;
   horarios: string[];
 }
 
-export interface CronogramaType {
+export interface DiaType {
   dia: string;
-  funciones: FuncionesType[];
+  funciones: FuncionType[];
 }
 
-export interface CinesType {
+export interface CineType {
   nombre: string;
   direccion: string;
   peliculas: {
     slug: string;
-    cronograma: CronogramaType[];
+    dias: DiaType[];
   }[];
 }

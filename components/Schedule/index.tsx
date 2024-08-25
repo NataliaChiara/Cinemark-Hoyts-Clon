@@ -2,61 +2,58 @@ import { ChangeEvent } from 'react';
 import { useState } from 'react';
 import cs from 'classnames';
 import s from './Schedule.module.css';
-import { CinesType, CronogramaType, FuncionesType } from '@/types/model';
+import { DiaType, FuncionType, SelectedFuncionType } from '@/types/model';
 import { Modal } from '@/components';
 import { cines } from '@/lib/dataset';
 
 const Schedule = ({ movieSlug }: { movieSlug: string }) => {
-  const [cine, setCine] = useState<CinesType | undefined>();
-  const [cronograma, setCronograma] = useState<CronogramaType[] | undefined>();
-  const [day, setDay] = useState('');
-  const [funciones, setFunciones] = useState<FuncionesType[] | undefined>();
-  const [type, setType] = useState('');
-  const [hour, setHour] = useState('');
-
+  const [cineName, setCineName] = useState('');
+  const [days, setDays] = useState<DiaType[] | undefined>();
+  const [funciones, setFunciones] = useState<FuncionType[] | undefined>();
+  const [selectedDay, setSelectedDay] = useState('');
+  const [selectedFunction, setSelectedFunction] = useState<SelectedFuncionType | undefined>();
   const [showModal, setShowModal] = useState(false);
 
-  const handleSelectChange = (event: ChangeEvent<HTMLSelectElement>) => {
+  const handleSelectCine = (event: ChangeEvent<HTMLSelectElement>) => {
     const selectedCine = cines.find((item) => item.nombre === event.target.value);
-    setCine(selectedCine);
-    const cronograma = selectedCine?.peliculas.find((item) => item.slug === movieSlug)?.cronograma;
-    setCronograma(cronograma);
-    setFunciones(cronograma![0].funciones);
+    setCineName(selectedCine!.nombre);
+    const movieDays = selectedCine?.peliculas.find((item) => item.slug === movieSlug)?.dias;
+    setDays(movieDays);
+    setFunciones(movieDays![0].funciones);
+    setSelectedDay(movieDays![0].dia);
   };
 
-  const handlealgo = (dia: string) => {
-    setDay(dia);
-    const funciones = cronograma?.find((item) => item.dia === dia)?.funciones;
+  const handleSelectDay = (dia: string) => {
+    setSelectedDay(dia);
+    const funciones = days?.find((item) => item.dia === dia)?.funciones;
     setFunciones(funciones);
   };
 
   const handleBuyClick = () => {
-    window.location.href = `http://localhost:3000/ticketera?slug=${movieSlug}&cine=${cine}&day=${day}&type=${type}&hour=${hour}`;
+    window.location.href = `http://localhost:3000/ticketera?functionId=${selectedFunction?.id}&cine=${cineName}`;
   };
 
   return (
     <>
       <div className={s.container}>
         <select
-          className={cs(s.container__button, { [s.container__button__selected]: cine })}
-          value={cine?.nombre || ''}
-          onChange={handleSelectChange}>
-          {!cine && <option value="">SELECCIONA UN CINE</option>}
+          className={cs(s.container__button, { [s.container__button__selected]: cineName })}
+          onChange={handleSelectCine}>
+          {!cineName && <option>SELECCIONA UN CINE</option>}
           {cines.map((item) => (
             <option key={item.nombre} value={item.nombre}>
               {item.nombre}
             </option>
           ))}
         </select>
-
-        {cronograma && (
+        {days && (
           <div className={s.container__days}>
-            {cronograma.map((item, index) => (
+            {days.map((item) => (
               <button
                 className={cs(s.container__button, {
-                  [s.container__button__selected]: day ? item.dia === day : index === 0
+                  [s.container__button__selected]: selectedDay === item.dia
                 })}
-                onClick={() => handlealgo(item.dia)}
+                onClick={() => handleSelectDay(item.dia)}
                 key={item.dia}>
                 {item.dia}
               </button>
@@ -66,7 +63,7 @@ const Schedule = ({ movieSlug }: { movieSlug: string }) => {
         {funciones && (
           <div className={s.container__hours}>
             <h2 className={s.container__hours__header}>
-              horarios {cine?.nombre} para {day}
+              horarios {cineName} para {selectedDay}
             </h2>
             {funciones.map((item) => (
               <div className={s.container__hours__type} key={item.tipo}>
@@ -74,12 +71,16 @@ const Schedule = ({ movieSlug }: { movieSlug: string }) => {
                 <div className={s.container__hours__type__buttons}>
                   {item.horarios.map((hora) => (
                     <button
-                      onClick={() => {
-                        setType(item.tipo);
-                        setHour(hora);
-                      }}
+                      onClick={() =>
+                        setSelectedFunction({
+                          id: item.id,
+                          tipo: item.tipo,
+                          sala: item.sala,
+                          hora: hora
+                        })
+                      }
                       className={cs(s.container__button, {
-                        [s.container__button__selected]: type === item.tipo && hour === hora
+                        [s.container__button__selected]: selectedFunction?.hora === hora
                       })}
                       key={hora}>
                       {hora}
@@ -90,13 +91,13 @@ const Schedule = ({ movieSlug }: { movieSlug: string }) => {
             ))}
           </div>
         )}
-
         <button
-          className={cs(s.buy_button, { [s.buy_button__disabled]: !hour })}
+          className={cs(s.buy_button, { [s.buy_button__disabled]: !selectedFunction })}
           onClick={() => setShowModal(true)}>
           COMPRAR
         </button>
       </div>
+
       {showModal && (
         <Modal>
           <div className={s.modal}>
@@ -105,8 +106,8 @@ const Schedule = ({ movieSlug }: { movieSlug: string }) => {
             </button>
             <h2>ATENCION!</h2>
             <p>
-              Su seleccion es {movieSlug.replace('-', ' ').toUpperCase()}, {cine?.nombre}, {day},{' '}
-              {type}, {hour}
+              Su seleccion es {movieSlug.replace('-', ' ').toUpperCase()}, {selectedFunction?.tipo},{' '}
+              {selectedDay}, {selectedFunction?.hora}hs.
             </p>
             <hr />
             <button className={s.buy_button} onClick={handleBuyClick}>

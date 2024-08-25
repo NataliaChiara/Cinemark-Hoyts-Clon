@@ -1,4 +1,4 @@
-import { PeliculaType, CinesType } from '@/types/model';
+import { PeliculaType, CineType } from '@/types/model';
 
 export const peliculas: PeliculaType[] = [
   {
@@ -42,23 +42,25 @@ export const peliculas: PeliculaType[] = [
   }
 ];
 
-export const cines: CinesType[] = [
+export const cines: CineType[] = [
   {
     nombre: 'HOYTS UNICENTER',
     direccion: 'Parana 3247',
     peliculas: [
       {
         slug: 'alien-romulus',
-        cronograma: [
+        dias: [
           {
             dia: '22/08',
             funciones: [
               {
+                id: 'id1',
                 tipo: '2D SUBTITULADA',
                 sala: '1',
                 horarios: ['15:00', '20:00']
               },
               {
+                id: 'id2',
                 tipo: '2D CASTELLANO',
                 sala: '2',
                 horarios: ['16:00', '21:00']
@@ -69,11 +71,13 @@ export const cines: CinesType[] = [
             dia: '23/08',
             funciones: [
               {
+                id: 'id3',
                 tipo: '2D SUBTITULADA',
                 sala: '1',
                 horarios: ['15:00', '20:00']
               },
               {
+                id: 'id4',
                 tipo: '2D CASTELLANO',
                 sala: '2',
                 horarios: ['16:00', '21:00']
@@ -90,16 +94,18 @@ export const cines: CinesType[] = [
     peliculas: [
       {
         slug: 'alien-romulus',
-        cronograma: [
+        dias: [
           {
             dia: '22/08',
             funciones: [
               {
+                id: 'id5',
                 tipo: '2D SUBTITULADA',
                 sala: '1',
                 horarios: ['15:00', '20:00']
               },
               {
+                id: 'id6',
                 tipo: '2D CASTELLANO',
                 sala: '2',
                 horarios: ['16:00', '21:00']
@@ -110,11 +116,13 @@ export const cines: CinesType[] = [
             dia: '23/08',
             funciones: [
               {
+                id: 'id7',
                 tipo: '2D SUBTITULADA',
                 sala: '1',
                 horarios: ['15:00', '20:00']
               },
               {
+                id: 'id8',
                 tipo: '2D CASTELLANO',
                 sala: '2',
                 horarios: ['16:00', '21:00']

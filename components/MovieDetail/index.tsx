@@ -4,7 +4,8 @@ import { Schedule } from '@/components';
 import { PeliculaType } from '@/types/model';
 
 const MovieDetail = ({ movie }: { movie: PeliculaType }) => {
-  const { titulo, sinopsis, genero, duracion, trailer, poster, edad, slug } = movie;
+  const { titulo, sinopsis, genero, duracion, director, actores, trailer, poster, edad, slug } =
+    movie;
 
   return (
     <div className={s.container}>
@@ -16,6 +17,10 @@ const MovieDetail = ({ movie }: { movie: PeliculaType }) => {
           Género: <strong>{genero}</strong>
           <br />
           Duración: <strong>{duracion}</strong>
+          <br />
+          actores: <strong>{actores}</strong>
+          <br />
+          Director: <strong>{director}</strong>
         </p>
       </div>
       <div className={s.container__trailer}>

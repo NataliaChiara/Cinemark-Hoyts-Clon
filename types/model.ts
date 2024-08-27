@@ -6,6 +6,7 @@ export interface PeliculaType {
   sinopsis: string;
   genero: string;
   duracion: string;
+  actores: string;
   director: string;
   trailer: string;
   poster: string;

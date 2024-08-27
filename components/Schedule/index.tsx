@@ -19,7 +19,9 @@ const Schedule = ({ movieSlug }: { movieSlug: string }) => {
     setCineName(selectedCine!.nombre);
     const movieDays = selectedCine?.peliculas.find((item) => item.slug === movieSlug)?.dias;
     setDays(movieDays);
-    setFunciones(movieDays![0].funciones);
+    if (movieDays!.length > 0) {
+      setFunciones(movieDays![0].funciones);
+    }
     setSelectedDay(movieDays![0].dia);
   };
 

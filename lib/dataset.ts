@@ -1726,3 +1726,9 @@ export const cines: CineType[] = [
     ]
   }
 ];
+
+export const slider = [
+  '/images/banner/alien-romulus.jpeg',
+  '/images/banner/deadpool-and-wolverine.png',
+  '/images/banner/el-cuervo.png'
+];

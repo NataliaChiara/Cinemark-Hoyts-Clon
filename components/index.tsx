@@ -8,3 +8,4 @@ export { default as Ticket } from './Ticket';
 export { default as SelectSeats } from './SelectSeats';
 export { default as Header } from './Header';
 export { default as Footer } from './Footer';
+export { default as Slider } from './Slider';

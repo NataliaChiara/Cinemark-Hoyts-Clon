@@ -1,0 +1,31 @@
+.container {
+  width: 90vw;
+  max-width: 1200px;
+  margin: auto;
+
+  & img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  :global {
+    .swiper-pagination-bullets {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 8px;
+    }
+    .swiper-pagination-bullet {
+      background-color: white;
+      width: 10px;
+      height: 10px;
+      opacity: 1;
+    }
+    .swiper-pagination-bullet-active {
+      background-color: white;
+      width: 15px;
+      height: 15px;
+    }
+  }
+}

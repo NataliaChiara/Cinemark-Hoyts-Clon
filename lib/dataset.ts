@@ -57,16 +57,380 @@ export const cines: CineType[] = [
                 tipo: '2D SUBTITULADA',
                 sala: '1',
                 horarios: [
-                  { id: 'id1', hora: '15:00' },
-                  { id: 'id2', hora: '20:00' }
+                  {
+                    id: 'id1',
+                    asientos: {
+                      filas: [
+                        {
+                          asientosReservados: [],
+                          nombre: 'A',
+                          asientos: ['12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'],
+                          asientosTotales: 12
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'B',
+                          asientos: ['12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'],
+                          asientosTotales: 12
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'C',
+                          asientos: ['12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'],
+                          asientosTotales: 12
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'D',
+                          asientos: ['12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'],
+                          asientosTotales: 12
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'E',
+                          asientos: ['12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'],
+                          asientosTotales: 12
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: '',
+                          asientos: [''],
+                          asientosTotales: 0
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: '',
+                          asientos: [''],
+                          asientosTotales: 0
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'F',
+                          asientos: ['', '5', '4', '', '', '', '', '3', '2', '1', '', ''],
+                          asientosTotales: 5
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'G',
+                          asientos: ['', '5', '4', '', '', '', '', '3', '2', '1', '', ''],
+                          asientosTotales: 5
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'H',
+                          asientos: ['', '9', '8', '7', '6', '5', '4', '3', '2', '1', '', ''],
+                          asientosTotales: 9
+                        },
+                        {
+                          asientosReservados: ['8', '9'],
+                          nombre: 'I',
+                          asientos: ['', '9', '8', '7', '6', '5', '4', '3', '2', '1', '', ''],
+                          asientosTotales: 9
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'J',
+                          asientos: ['', '9', '8', '7', '6', '5', '4', '3', '2', '1', '', ''],
+                          asientosTotales: 9
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'K',
+                          asientos: ['', '9', '8', '7', '6', '5', '4', '3', '2', '1', '', ''],
+                          asientosTotales: 9
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'L',
+                          asientos: ['12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'],
+                          asientosTotales: 12
+                        }
+                      ]
+                    },
+                    hora: '15:00'
+                  },
+                  {
+                    id: 'id2',
+                    asientos: {
+                      filas: [
+                        {
+                          asientosReservados: [],
+                          nombre: 'A',
+                          asientos: ['12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'],
+                          asientosTotales: 12
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'B',
+                          asientos: ['12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'],
+                          asientosTotales: 12
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'C',
+                          asientos: ['12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'],
+                          asientosTotales: 12
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'D',
+                          asientos: ['12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'],
+                          asientosTotales: 12
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'E',
+                          asientos: ['12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'],
+                          asientosTotales: 12
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: '',
+                          asientos: [''],
+                          asientosTotales: 0
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: '',
+                          asientos: [''],
+                          asientosTotales: 0
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'F',
+                          asientos: ['', '5', '4', '', '', '', '', '3', '2', '1', '', ''],
+                          asientosTotales: 5
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'G',
+                          asientos: ['', '5', '4', '', '', '', '', '3', '2', '1', '', ''],
+                          asientosTotales: 5
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'H',
+                          asientos: ['', '9', '8', '7', '6', '5', '4', '3', '2', '1', '', ''],
+                          asientosTotales: 9
+                        },
+                        {
+                          asientosReservados: ['8', '9'],
+                          nombre: 'I',
+                          asientos: ['', '9', '8', '7', '6', '5', '4', '3', '2', '1', '', ''],
+                          asientosTotales: 9
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'J',
+                          asientos: ['', '9', '8', '7', '6', '5', '4', '3', '2', '1', '', ''],
+                          asientosTotales: 9
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'K',
+                          asientos: ['', '9', '8', '7', '6', '5', '4', '3', '2', '1', '', ''],
+                          asientosTotales: 9
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'L',
+                          asientos: ['12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'],
+                          asientosTotales: 12
+                        }
+                      ]
+                    },
+                    hora: '20:00'
+                  }
                 ]
               },
               {
                 tipo: '2D CASTELLANO',
                 sala: '2',
                 horarios: [
-                  { id: 'id3', hora: '16:00' },
-                  { id: 'id4', hora: '21:00' }
+                  {
+                    id: 'id3',
+                    asientos: {
+                      filas: [
+                        {
+                          asientosReservados: [],
+                          nombre: 'A',
+                          asientos: ['12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'],
+                          asientosTotales: 12
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'B',
+                          asientos: ['12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'],
+                          asientosTotales: 12
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'C',
+                          asientos: ['12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'],
+                          asientosTotales: 12
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'D',
+                          asientos: ['12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'],
+                          asientosTotales: 12
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'E',
+                          asientos: ['12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'],
+                          asientosTotales: 12
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: '',
+                          asientos: [''],
+                          asientosTotales: 0
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: '',
+                          asientos: [''],
+                          asientosTotales: 0
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'F',
+                          asientos: ['', '5', '4', '', '', '', '', '3', '2', '1', '', ''],
+                          asientosTotales: 5
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'G',
+                          asientos: ['', '5', '4', '', '', '', '', '3', '2', '1', '', ''],
+                          asientosTotales: 5
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'H',
+                          asientos: ['', '9', '8', '7', '6', '5', '4', '3', '2', '1', '', ''],
+                          asientosTotales: 9
+                        },
+                        {
+                          asientosReservados: ['8', '9'],
+                          nombre: 'I',
+                          asientos: ['', '9', '8', '7', '6', '5', '4', '3', '2', '1', '', ''],
+                          asientosTotales: 9
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'J',
+                          asientos: ['', '9', '8', '7', '6', '5', '4', '3', '2', '1', '', ''],
+                          asientosTotales: 9
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'K',
+                          asientos: ['', '9', '8', '7', '6', '5', '4', '3', '2', '1', '', ''],
+                          asientosTotales: 9
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'L',
+                          asientos: ['12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'],
+                          asientosTotales: 12
+                        }
+                      ]
+                    },
+                    hora: '16:00'
+                  },
+                  {
+                    id: 'id4',
+                    asientos: {
+                      filas: [
+                        {
+                          asientosReservados: [],
+                          nombre: 'A',
+                          asientos: ['12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'],
+                          asientosTotales: 12
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'B',
+                          asientos: ['12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'],
+                          asientosTotales: 12
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'C',
+                          asientos: ['12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'],
+                          asientosTotales: 12
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'D',
+                          asientos: ['12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'],
+                          asientosTotales: 12
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'E',
+                          asientos: ['12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'],
+                          asientosTotales: 12
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: '',
+                          asientos: [''],
+                          asientosTotales: 0
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: '',
+                          asientos: [''],
+                          asientosTotales: 0
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'F',
+                          asientos: ['', '5', '4', '', '', '', '', '3', '2', '1', '', ''],
+                          asientosTotales: 5
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'G',
+                          asientos: ['', '5', '4', '', '', '', '', '3', '2', '1', '', ''],
+                          asientosTotales: 5
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'H',
+                          asientos: ['', '9', '8', '7', '6', '5', '4', '3', '2', '1', '', ''],
+                          asientosTotales: 9
+                        },
+                        {
+                          asientosReservados: ['8', '9'],
+                          nombre: 'I',
+                          asientos: ['', '9', '8', '7', '6', '5', '4', '3', '2', '1', '', ''],
+                          asientosTotales: 9
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'J',
+                          asientos: ['', '9', '8', '7', '6', '5', '4', '3', '2', '1', '', ''],
+                          asientosTotales: 9
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'K',
+                          asientos: ['', '9', '8', '7', '6', '5', '4', '3', '2', '1', '', ''],
+                          asientosTotales: 9
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'L',
+                          asientos: ['12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'],
+                          asientosTotales: 12
+                        }
+                      ]
+                    },
+                    hora: '21:00'
+                  }
                 ]
               }
             ]
@@ -78,16 +442,380 @@ export const cines: CineType[] = [
                 tipo: '2D SUBTITULADA',
                 sala: '1',
                 horarios: [
-                  { id: 'id5', hora: '15:00' },
-                  { id: 'id6', hora: '20:00' }
+                  {
+                    id: 'id5',
+                    asientos: {
+                      filas: [
+                        {
+                          asientosReservados: [],
+                          nombre: 'A',
+                          asientos: ['12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'],
+                          asientosTotales: 12
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'B',
+                          asientos: ['12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'],
+                          asientosTotales: 12
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'C',
+                          asientos: ['12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'],
+                          asientosTotales: 12
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'D',
+                          asientos: ['12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'],
+                          asientosTotales: 12
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'E',
+                          asientos: ['12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'],
+                          asientosTotales: 12
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: '',
+                          asientos: [''],
+                          asientosTotales: 0
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: '',
+                          asientos: [''],
+                          asientosTotales: 0
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'F',
+                          asientos: ['', '5', '4', '', '', '', '', '3', '2', '1', '', ''],
+                          asientosTotales: 5
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'G',
+                          asientos: ['', '5', '4', '', '', '', '', '3', '2', '1', '', ''],
+                          asientosTotales: 5
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'H',
+                          asientos: ['', '9', '8', '7', '6', '5', '4', '3', '2', '1', '', ''],
+                          asientosTotales: 9
+                        },
+                        {
+                          asientosReservados: ['8', '9'],
+                          nombre: 'I',
+                          asientos: ['', '9', '8', '7', '6', '5', '4', '3', '2', '1', '', ''],
+                          asientosTotales: 9
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'J',
+                          asientos: ['', '9', '8', '7', '6', '5', '4', '3', '2', '1', '', ''],
+                          asientosTotales: 9
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'K',
+                          asientos: ['', '9', '8', '7', '6', '5', '4', '3', '2', '1', '', ''],
+                          asientosTotales: 9
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'L',
+                          asientos: ['12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'],
+                          asientosTotales: 12
+                        }
+                      ]
+                    },
+                    hora: '15:00'
+                  },
+                  {
+                    id: 'id6',
+                    asientos: {
+                      filas: [
+                        {
+                          asientosReservados: [],
+                          nombre: 'A',
+                          asientos: ['12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'],
+                          asientosTotales: 12
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'B',
+                          asientos: ['12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'],
+                          asientosTotales: 12
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'C',
+                          asientos: ['12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'],
+                          asientosTotales: 12
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'D',
+                          asientos: ['12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'],
+                          asientosTotales: 12
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'E',
+                          asientos: ['12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'],
+                          asientosTotales: 12
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: '',
+                          asientos: [''],
+                          asientosTotales: 0
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: '',
+                          asientos: [''],
+                          asientosTotales: 0
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'F',
+                          asientos: ['', '5', '4', '', '', '', '', '3', '2', '1', '', ''],
+                          asientosTotales: 5
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'G',
+                          asientos: ['', '5', '4', '', '', '', '', '3', '2', '1', '', ''],
+                          asientosTotales: 5
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'H',
+                          asientos: ['', '9', '8', '7', '6', '5', '4', '3', '2', '1', '', ''],
+                          asientosTotales: 9
+                        },
+                        {
+                          asientosReservados: ['8', '9'],
+                          nombre: 'I',
+                          asientos: ['', '9', '8', '7', '6', '5', '4', '3', '2', '1', '', ''],
+                          asientosTotales: 9
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'J',
+                          asientos: ['', '9', '8', '7', '6', '5', '4', '3', '2', '1', '', ''],
+                          asientosTotales: 9
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'K',
+                          asientos: ['', '9', '8', '7', '6', '5', '4', '3', '2', '1', '', ''],
+                          asientosTotales: 9
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'L',
+                          asientos: ['12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'],
+                          asientosTotales: 12
+                        }
+                      ]
+                    },
+                    hora: '20:00'
+                  }
                 ]
               },
               {
                 tipo: '2D CASTELLANO',
                 sala: '2',
                 horarios: [
-                  { id: 'id7', hora: '16:00' },
-                  { id: 'id8', hora: '21:00' }
+                  {
+                    id: 'id7',
+                    asientos: {
+                      filas: [
+                        {
+                          asientosReservados: [],
+                          nombre: 'A',
+                          asientos: ['12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'],
+                          asientosTotales: 12
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'B',
+                          asientos: ['12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'],
+                          asientosTotales: 12
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'C',
+                          asientos: ['12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'],
+                          asientosTotales: 12
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'D',
+                          asientos: ['12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'],
+                          asientosTotales: 12
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'E',
+                          asientos: ['12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'],
+                          asientosTotales: 12
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: '',
+                          asientos: [''],
+                          asientosTotales: 0
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: '',
+                          asientos: [''],
+                          asientosTotales: 0
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'F',
+                          asientos: ['', '5', '4', '', '', '', '', '3', '2', '1', '', ''],
+                          asientosTotales: 5
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'G',
+                          asientos: ['', '5', '4', '', '', '', '', '3', '2', '1', '', ''],
+                          asientosTotales: 5
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'H',
+                          asientos: ['', '9', '8', '7', '6', '5', '4', '3', '2', '1', '', ''],
+                          asientosTotales: 9
+                        },
+                        {
+                          asientosReservados: ['8', '9'],
+                          nombre: 'I',
+                          asientos: ['', '9', '8', '7', '6', '5', '4', '3', '2', '1', '', ''],
+                          asientosTotales: 9
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'J',
+                          asientos: ['', '9', '8', '7', '6', '5', '4', '3', '2', '1', '', ''],
+                          asientosTotales: 9
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'K',
+                          asientos: ['', '9', '8', '7', '6', '5', '4', '3', '2', '1', '', ''],
+                          asientosTotales: 9
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'L',
+                          asientos: ['12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'],
+                          asientosTotales: 12
+                        }
+                      ]
+                    },
+                    hora: '16:00'
+                  },
+                  {
+                    id: 'id8',
+                    asientos: {
+                      filas: [
+                        {
+                          asientosReservados: [],
+                          nombre: 'A',
+                          asientos: ['12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'],
+                          asientosTotales: 12
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'B',
+                          asientos: ['12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'],
+                          asientosTotales: 12
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'C',
+                          asientos: ['12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'],
+                          asientosTotales: 12
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'D',
+                          asientos: ['12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'],
+                          asientosTotales: 12
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'E',
+                          asientos: ['12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'],
+                          asientosTotales: 12
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: '',
+                          asientos: [''],
+                          asientosTotales: 0
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: '',
+                          asientos: [''],
+                          asientosTotales: 0
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'F',
+                          asientos: ['', '5', '4', '', '', '', '', '3', '2', '1', '', ''],
+                          asientosTotales: 5
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'G',
+                          asientos: ['', '5', '4', '', '', '', '', '3', '2', '1', '', ''],
+                          asientosTotales: 5
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'H',
+                          asientos: ['', '9', '8', '7', '6', '5', '4', '3', '2', '1', '', ''],
+                          asientosTotales: 9
+                        },
+                        {
+                          asientosReservados: ['8', '9'],
+                          nombre: 'I',
+                          asientos: ['', '9', '8', '7', '6', '5', '4', '3', '2', '1', '', ''],
+                          asientosTotales: 9
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'J',
+                          asientos: ['', '9', '8', '7', '6', '5', '4', '3', '2', '1', '', ''],
+                          asientosTotales: 9
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'K',
+                          asientos: ['', '9', '8', '7', '6', '5', '4', '3', '2', '1', '', ''],
+                          asientosTotales: 9
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'L',
+                          asientos: ['12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'],
+                          asientosTotales: 12
+                        }
+                      ]
+                    },
+                    hora: '21:00'
+                  }
                 ]
               }
             ]
@@ -110,16 +838,380 @@ export const cines: CineType[] = [
                 tipo: '2D SUBTITULADA',
                 sala: '1',
                 horarios: [
-                  { id: 'id9', hora: '15:00' },
-                  { id: 'id10', hora: '20:00' }
+                  {
+                    id: 'id9',
+                    asientos: {
+                      filas: [
+                        {
+                          asientosReservados: [],
+                          nombre: 'A',
+                          asientos: ['12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'],
+                          asientosTotales: 12
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'B',
+                          asientos: ['12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'],
+                          asientosTotales: 12
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'C',
+                          asientos: ['12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'],
+                          asientosTotales: 12
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'D',
+                          asientos: ['12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'],
+                          asientosTotales: 12
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'E',
+                          asientos: ['12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'],
+                          asientosTotales: 12
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: '',
+                          asientos: [''],
+                          asientosTotales: 0
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: '',
+                          asientos: [''],
+                          asientosTotales: 0
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'F',
+                          asientos: ['', '5', '4', '', '', '', '', '3', '2', '1', '', ''],
+                          asientosTotales: 5
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'G',
+                          asientos: ['', '5', '4', '', '', '', '', '3', '2', '1', '', ''],
+                          asientosTotales: 5
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'H',
+                          asientos: ['', '9', '8', '7', '6', '5', '4', '3', '2', '1', '', ''],
+                          asientosTotales: 9
+                        },
+                        {
+                          asientosReservados: ['8', '9'],
+                          nombre: 'I',
+                          asientos: ['', '9', '8', '7', '6', '5', '4', '3', '2', '1', '', ''],
+                          asientosTotales: 9
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'J',
+                          asientos: ['', '9', '8', '7', '6', '5', '4', '3', '2', '1', '', ''],
+                          asientosTotales: 9
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'K',
+                          asientos: ['', '9', '8', '7', '6', '5', '4', '3', '2', '1', '', ''],
+                          asientosTotales: 9
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'L',
+                          asientos: ['12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'],
+                          asientosTotales: 12
+                        }
+                      ]
+                    },
+                    hora: '15:00'
+                  },
+                  {
+                    id: 'id10',
+                    asientos: {
+                      filas: [
+                        {
+                          asientosReservados: [],
+                          nombre: 'A',
+                          asientos: ['12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'],
+                          asientosTotales: 12
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'B',
+                          asientos: ['12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'],
+                          asientosTotales: 12
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'C',
+                          asientos: ['12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'],
+                          asientosTotales: 12
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'D',
+                          asientos: ['12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'],
+                          asientosTotales: 12
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'E',
+                          asientos: ['12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'],
+                          asientosTotales: 12
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: '',
+                          asientos: [''],
+                          asientosTotales: 0
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: '',
+                          asientos: [''],
+                          asientosTotales: 0
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'F',
+                          asientos: ['', '5', '4', '', '', '', '', '3', '2', '1', '', ''],
+                          asientosTotales: 5
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'G',
+                          asientos: ['', '5', '4', '', '', '', '', '3', '2', '1', '', ''],
+                          asientosTotales: 5
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'H',
+                          asientos: ['', '9', '8', '7', '6', '5', '4', '3', '2', '1', '', ''],
+                          asientosTotales: 9
+                        },
+                        {
+                          asientosReservados: ['8', '9'],
+                          nombre: 'I',
+                          asientos: ['', '9', '8', '7', '6', '5', '4', '3', '2', '1', '', ''],
+                          asientosTotales: 9
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'J',
+                          asientos: ['', '9', '8', '7', '6', '5', '4', '3', '2', '1', '', ''],
+                          asientosTotales: 9
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'K',
+                          asientos: ['', '9', '8', '7', '6', '5', '4', '3', '2', '1', '', ''],
+                          asientosTotales: 9
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'L',
+                          asientos: ['12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'],
+                          asientosTotales: 12
+                        }
+                      ]
+                    },
+                    hora: '20:00'
+                  }
                 ]
               },
               {
                 tipo: '2D CASTELLANO',
                 sala: '2',
                 horarios: [
-                  { id: 'id11', hora: '16:00' },
-                  { id: 'id12', hora: '21:00' }
+                  {
+                    id: 'id11',
+                    asientos: {
+                      filas: [
+                        {
+                          asientosReservados: [],
+                          nombre: 'A',
+                          asientos: ['12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'],
+                          asientosTotales: 12
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'B',
+                          asientos: ['12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'],
+                          asientosTotales: 12
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'C',
+                          asientos: ['12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'],
+                          asientosTotales: 12
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'D',
+                          asientos: ['12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'],
+                          asientosTotales: 12
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'E',
+                          asientos: ['12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'],
+                          asientosTotales: 12
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: '',
+                          asientos: [''],
+                          asientosTotales: 0
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: '',
+                          asientos: [''],
+                          asientosTotales: 0
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'F',
+                          asientos: ['', '5', '4', '', '', '', '', '3', '2', '1', '', ''],
+                          asientosTotales: 5
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'G',
+                          asientos: ['', '5', '4', '', '', '', '', '3', '2', '1', '', ''],
+                          asientosTotales: 5
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'H',
+                          asientos: ['', '9', '8', '7', '6', '5', '4', '3', '2', '1', '', ''],
+                          asientosTotales: 9
+                        },
+                        {
+                          asientosReservados: ['8', '9'],
+                          nombre: 'I',
+                          asientos: ['', '9', '8', '7', '6', '5', '4', '3', '2', '1', '', ''],
+                          asientosTotales: 9
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'J',
+                          asientos: ['', '9', '8', '7', '6', '5', '4', '3', '2', '1', '', ''],
+                          asientosTotales: 9
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'K',
+                          asientos: ['', '9', '8', '7', '6', '5', '4', '3', '2', '1', '', ''],
+                          asientosTotales: 9
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'L',
+                          asientos: ['12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'],
+                          asientosTotales: 12
+                        }
+                      ]
+                    },
+                    hora: '16:00'
+                  },
+                  {
+                    id: 'id12',
+                    asientos: {
+                      filas: [
+                        {
+                          asientosReservados: [],
+                          nombre: 'A',
+                          asientos: ['12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'],
+                          asientosTotales: 12
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'B',
+                          asientos: ['12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'],
+                          asientosTotales: 12
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'C',
+                          asientos: ['12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'],
+                          asientosTotales: 12
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'D',
+                          asientos: ['12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'],
+                          asientosTotales: 12
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'E',
+                          asientos: ['12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'],
+                          asientosTotales: 12
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: '',
+                          asientos: [''],
+                          asientosTotales: 0
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: '',
+                          asientos: [''],
+                          asientosTotales: 0
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'F',
+                          asientos: ['', '5', '4', '', '', '', '', '3', '2', '1', '', ''],
+                          asientosTotales: 5
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'G',
+                          asientos: ['', '5', '4', '', '', '', '', '3', '2', '1', '', ''],
+                          asientosTotales: 5
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'H',
+                          asientos: ['', '9', '8', '7', '6', '5', '4', '3', '2', '1', '', ''],
+                          asientosTotales: 9
+                        },
+                        {
+                          asientosReservados: ['8', '9'],
+                          nombre: 'I',
+                          asientos: ['', '9', '8', '7', '6', '5', '4', '3', '2', '1', '', ''],
+                          asientosTotales: 9
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'J',
+                          asientos: ['', '9', '8', '7', '6', '5', '4', '3', '2', '1', '', ''],
+                          asientosTotales: 9
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'K',
+                          asientos: ['', '9', '8', '7', '6', '5', '4', '3', '2', '1', '', ''],
+                          asientosTotales: 9
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'L',
+                          asientos: ['12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'],
+                          asientosTotales: 12
+                        }
+                      ]
+                    },
+                    hora: '21:00'
+                  }
                 ]
               }
             ]
@@ -131,16 +1223,380 @@ export const cines: CineType[] = [
                 tipo: '2D SUBTITULADA',
                 sala: '1',
                 horarios: [
-                  { id: 'id13', hora: '15:00' },
-                  { id: 'id14', hora: '20:00' }
+                  {
+                    id: 'id13',
+                    asientos: {
+                      filas: [
+                        {
+                          asientosReservados: [],
+                          nombre: 'A',
+                          asientos: ['12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'],
+                          asientosTotales: 12
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'B',
+                          asientos: ['12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'],
+                          asientosTotales: 12
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'C',
+                          asientos: ['12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'],
+                          asientosTotales: 12
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'D',
+                          asientos: ['12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'],
+                          asientosTotales: 12
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'E',
+                          asientos: ['12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'],
+                          asientosTotales: 12
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: '',
+                          asientos: [''],
+                          asientosTotales: 0
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: '',
+                          asientos: [''],
+                          asientosTotales: 0
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'F',
+                          asientos: ['', '5', '4', '', '', '', '', '3', '2', '1', '', ''],
+                          asientosTotales: 5
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'G',
+                          asientos: ['', '5', '4', '', '', '', '', '3', '2', '1', '', ''],
+                          asientosTotales: 5
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'H',
+                          asientos: ['', '9', '8', '7', '6', '5', '4', '3', '2', '1', '', ''],
+                          asientosTotales: 9
+                        },
+                        {
+                          asientosReservados: ['8', '9'],
+                          nombre: 'I',
+                          asientos: ['', '9', '8', '7', '6', '5', '4', '3', '2', '1', '', ''],
+                          asientosTotales: 9
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'J',
+                          asientos: ['', '9', '8', '7', '6', '5', '4', '3', '2', '1', '', ''],
+                          asientosTotales: 9
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'K',
+                          asientos: ['', '9', '8', '7', '6', '5', '4', '3', '2', '1', '', ''],
+                          asientosTotales: 9
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'L',
+                          asientos: ['12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'],
+                          asientosTotales: 12
+                        }
+                      ]
+                    },
+                    hora: '15:00'
+                  },
+                  {
+                    id: 'id14',
+                    asientos: {
+                      filas: [
+                        {
+                          asientosReservados: [],
+                          nombre: 'A',
+                          asientos: ['12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'],
+                          asientosTotales: 12
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'B',
+                          asientos: ['12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'],
+                          asientosTotales: 12
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'C',
+                          asientos: ['12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'],
+                          asientosTotales: 12
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'D',
+                          asientos: ['12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'],
+                          asientosTotales: 12
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'E',
+                          asientos: ['12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'],
+                          asientosTotales: 12
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: '',
+                          asientos: [''],
+                          asientosTotales: 0
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: '',
+                          asientos: [''],
+                          asientosTotales: 0
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'F',
+                          asientos: ['', '5', '4', '', '', '', '', '3', '2', '1', '', ''],
+                          asientosTotales: 5
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'G',
+                          asientos: ['', '5', '4', '', '', '', '', '3', '2', '1', '', ''],
+                          asientosTotales: 5
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'H',
+                          asientos: ['', '9', '8', '7', '6', '5', '4', '3', '2', '1', '', ''],
+                          asientosTotales: 9
+                        },
+                        {
+                          asientosReservados: ['8', '9'],
+                          nombre: 'I',
+                          asientos: ['', '9', '8', '7', '6', '5', '4', '3', '2', '1', '', ''],
+                          asientosTotales: 9
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'J',
+                          asientos: ['', '9', '8', '7', '6', '5', '4', '3', '2', '1', '', ''],
+                          asientosTotales: 9
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'K',
+                          asientos: ['', '9', '8', '7', '6', '5', '4', '3', '2', '1', '', ''],
+                          asientosTotales: 9
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'L',
+                          asientos: ['12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'],
+                          asientosTotales: 12
+                        }
+                      ]
+                    },
+                    hora: '20:00'
+                  }
                 ]
               },
               {
                 tipo: '2D CASTELLANO',
                 sala: '2',
                 horarios: [
-                  { id: 'id15', hora: '16:00' },
-                  { id: 'id16', hora: '21:00' }
+                  {
+                    id: 'id15',
+                    asientos: {
+                      filas: [
+                        {
+                          asientosReservados: [],
+                          nombre: 'A',
+                          asientos: ['12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'],
+                          asientosTotales: 12
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'B',
+                          asientos: ['12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'],
+                          asientosTotales: 12
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'C',
+                          asientos: ['12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'],
+                          asientosTotales: 12
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'D',
+                          asientos: ['12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'],
+                          asientosTotales: 12
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'E',
+                          asientos: ['12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'],
+                          asientosTotales: 12
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: '',
+                          asientos: [''],
+                          asientosTotales: 0
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: '',
+                          asientos: [''],
+                          asientosTotales: 0
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'F',
+                          asientos: ['', '5', '4', '', '', '', '', '3', '2', '1', '', ''],
+                          asientosTotales: 5
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'G',
+                          asientos: ['', '5', '4', '', '', '', '', '3', '2', '1', '', ''],
+                          asientosTotales: 5
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'H',
+                          asientos: ['', '9', '8', '7', '6', '5', '4', '3', '2', '1', '', ''],
+                          asientosTotales: 9
+                        },
+                        {
+                          asientosReservados: ['8', '9'],
+                          nombre: 'I',
+                          asientos: ['', '9', '8', '7', '6', '5', '4', '3', '2', '1', '', ''],
+                          asientosTotales: 9
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'J',
+                          asientos: ['', '9', '8', '7', '6', '5', '4', '3', '2', '1', '', ''],
+                          asientosTotales: 9
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'K',
+                          asientos: ['', '9', '8', '7', '6', '5', '4', '3', '2', '1', '', ''],
+                          asientosTotales: 9
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'L',
+                          asientos: ['12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'],
+                          asientosTotales: 12
+                        }
+                      ]
+                    },
+                    hora: '16:00'
+                  },
+                  {
+                    id: 'id16',
+                    asientos: {
+                      filas: [
+                        {
+                          asientosReservados: [],
+                          nombre: 'A',
+                          asientos: ['12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'],
+                          asientosTotales: 12
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'B',
+                          asientos: ['12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'],
+                          asientosTotales: 12
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'C',
+                          asientos: ['12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'],
+                          asientosTotales: 12
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'D',
+                          asientos: ['12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'],
+                          asientosTotales: 12
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'E',
+                          asientos: ['12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'],
+                          asientosTotales: 12
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: '',
+                          asientos: [''],
+                          asientosTotales: 0
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: '',
+                          asientos: [''],
+                          asientosTotales: 0
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'F',
+                          asientos: ['', '5', '4', '', '', '', '', '3', '2', '1', '', ''],
+                          asientosTotales: 5
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'G',
+                          asientos: ['', '5', '4', '', '', '', '', '3', '2', '1', '', ''],
+                          asientosTotales: 5
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'H',
+                          asientos: ['', '9', '8', '7', '6', '5', '4', '3', '2', '1', '', ''],
+                          asientosTotales: 9
+                        },
+                        {
+                          asientosReservados: ['8', '9'],
+                          nombre: 'I',
+                          asientos: ['', '9', '8', '7', '6', '5', '4', '3', '2', '1', '', ''],
+                          asientosTotales: 9
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'J',
+                          asientos: ['', '9', '8', '7', '6', '5', '4', '3', '2', '1', '', ''],
+                          asientosTotales: 9
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'K',
+                          asientos: ['', '9', '8', '7', '6', '5', '4', '3', '2', '1', '', ''],
+                          asientosTotales: 9
+                        },
+                        {
+                          asientosReservados: [],
+                          nombre: 'L',
+                          asientos: ['12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2', '1'],
+                          asientosTotales: 12
+                        }
+                      ]
+                    },
+                    hora: '21:00'
+                  }
                 ]
               }
             ]

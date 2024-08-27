@@ -4,7 +4,8 @@ import { useSearchParams } from 'next/navigation';
 import s from './page.module.css';
 import { Ticket } from '@/components';
 import { cines } from '@/lib/dataset';
-import { CineType, TicketType } from '@/types/model';
+import { TicketType } from '@/types/model';
+import { obtenerInfoPorId } from '@/lib/getInfoById';
 
 export default function Ticketera() {
   const [selectedMovie, setSelectedMovie] = useState<TicketType | undefined>();
@@ -12,41 +13,6 @@ export default function Ticketera() {
   const searchParams = useSearchParams();
   const functionId = searchParams.get('functionId');
   const cine = searchParams.get('cine');
-
-  function obtenerInfoPorId(objeto: CineType, idBuscado: string) {
-    let resultado: TicketType = {
-      hora: '',
-      sala: '',
-      tipo: '',
-      dia: '',
-      slug: '',
-      direccion: '',
-      nombre: ''
-    };
-
-    for (let pelicula of objeto.peliculas) {
-      for (let dia of pelicula.dias) {
-        for (let funcion of dia.funciones) {
-          for (let horario of funcion.horarios) {
-            if (horario.id === idBuscado) {
-              resultado = {
-                hora: horario.hora,
-                sala: funcion.sala,
-                tipo: funcion.tipo,
-                dia: dia.dia,
-                slug: pelicula.slug,
-                direccion: objeto.direccion,
-                nombre: objeto.nombre
-              };
-              return resultado;
-            }
-          }
-        }
-      }
-    }
-
-    return null;
-  }
 
   useEffect(() => {
     if (functionId && cine) {

@@ -3,6 +3,7 @@ import Image from 'next/image';
 import s from './Ticket.module.css';
 import { TicketType } from '@/types/model';
 import { peliculas } from '@/lib/dataset';
+import { SelectSeats } from '@/components';
 
 const Ticket = ({ SelectedMovie }: { SelectedMovie: TicketType }) => {
   const [movieData, setMovieData] = useState({
@@ -10,6 +11,10 @@ const Ticket = ({ SelectedMovie }: { SelectedMovie: TicketType }) => {
     titulo: '',
     edad: ''
   });
+
+  const [cantidadDeEntradasMaximo, setCantidadEntradasMaximo] = useState(0);
+  const [cantidadEntradas, setCantidadEntradas] = useState(1);
+  const [showSelectSeats, setShowSelectSeats] = useState(false);
 
   useEffect(() => {
     const movieData = peliculas.find((movie) => movie.slug === SelectedMovie.slug);
@@ -20,27 +25,60 @@ const Ticket = ({ SelectedMovie }: { SelectedMovie: TicketType }) => {
         edad: movieData.edad
       });
     }
-  }, [SelectedMovie.slug]);
+    const cantidadDeEntradasMaximoCalc = SelectedMovie.asientos?.filas.reduce(
+      (total, fila) => total + fila.asientosTotales - (fila.asientosReservados?.length || 0),
+      0
+    );
+    setCantidadEntradasMaximo(cantidadDeEntradasMaximoCalc!);
+  }, [SelectedMovie.slug, SelectedMovie.asientos]);
+
+  function addEntradas() {
+    if (cantidadEntradas < cantidadDeEntradasMaximo) {
+      setCantidadEntradas(cantidadEntradas + 1);
+    }
+  }
+
+  function removeEntradas() {
+    if (cantidadEntradas > 1) {
+      setCantidadEntradas(cantidadEntradas - 1);
+    }
+  }
 
   return (
-    <div className={s.container}>
-      <Image src={movieData.poster} alt={SelectedMovie.slug} width={190} height={285} />
-      <div>
-        <h1>{movieData.titulo}</h1>
-        <span>{movieData.edad}</span>
-        <p>
-          {SelectedMovie.tipo}
-          <br />
-          {SelectedMovie.nombre}
-          <br />
-          {'Sala ' + SelectedMovie.sala}
-          <br />
-          {SelectedMovie.direccion}
-          <br />
-          <strong>{SelectedMovie.dia + ' ' + SelectedMovie.hora}</strong>
-        </p>
-      </div>
-    </div>
+    <>
+      {showSelectSeats ? (
+        <SelectSeats asientos={SelectedMovie?.asientos!} cantidadEntradas={cantidadEntradas} />
+      ) : (
+        <div className={s.container}>
+          <div>
+            <Image src={movieData.poster} alt={SelectedMovie.slug} width={190} height={285} />
+            <div>
+              <h1>{movieData.titulo}</h1>
+              <span>{movieData.edad}</span>
+              <p>
+                {SelectedMovie.tipo}
+                <br />
+                {SelectedMovie.nombre}
+                <br />
+                {'Sala ' + SelectedMovie.sala}
+                <br />
+                {SelectedMovie.direccion}
+                <br />
+                <strong>{SelectedMovie.dia + ' ' + SelectedMovie.hora}</strong>
+              </p>
+            </div>
+          </div>
+          <div>
+            <span>{cantidadEntradas} entrada</span>
+            <div>
+              <button onClick={removeEntradas}>-</button>
+              <button onClick={addEntradas}>+</button>
+            </div>
+          </div>
+          <button onClick={() => setShowSelectSeats(true)}>confirmar</button>
+        </div>
+      )}
+    </>
   );
 };
 

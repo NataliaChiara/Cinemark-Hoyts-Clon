@@ -11,12 +11,24 @@ export interface PeliculaType {
   poster: string;
   edad: string;
 }
+
+export type Fila = {
+  nombre: string;
+  asientos: string[];
+  asientosReservados?: string[];
+  asientosTotales: number;
+};
+
+export interface AsientosType {
+  filas: Fila[];
+}
 export interface FuncionType {
   tipo: string;
   sala: string;
   horarios: {
     id: string;
     hora: string;
+    asientos: AsientosType;
   }[];
 }
 export interface DiaType {
@@ -34,6 +46,7 @@ export interface CineType {
 
 // ticket
 export interface TicketType {
+  asientos: AsientosType | undefined;
   hora: string;
   sala: string;
   tipo: string;

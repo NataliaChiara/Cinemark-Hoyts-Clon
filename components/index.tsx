@@ -6,3 +6,5 @@ export { default as Schedule } from './Schedule';
 export { default as Modal } from './Modal';
 export { default as Ticket } from './Ticket';
 export { default as SelectSeats } from './SelectSeats';
+export { default as Header } from './Header';
+export { default as Footer } from './Footer';

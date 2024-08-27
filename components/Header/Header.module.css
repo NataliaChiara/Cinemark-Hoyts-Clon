@@ -1,0 +1,16 @@
+.container {
+  width: 100vw;
+  position: fixed;
+  background-color: black;
+  z-index: 999;
+
+  &__content {
+    width: 90vw;
+    margin: auto;
+    max-width: 1200px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}

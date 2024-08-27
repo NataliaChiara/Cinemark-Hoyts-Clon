@@ -1,0 +1,18 @@
+.container {
+  width: 100vw;
+  background-color: black;
+
+  &__content {
+    width: 90vw;
+    margin: auto;
+    max-width: 1200px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & a {
+      text-decoration: underline;
+    }
+  }
+}

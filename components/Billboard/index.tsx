@@ -11,15 +11,24 @@ const Billboard = ({
 }) => {
   return (
     <div className={s.container}>
-      {peliculas.map((pelicula) => {
-        const { titulo, poster, slug } = pelicula;
-        return (
-          <div className={s.container__movie} key={slug} onClick={() => setMovie(pelicula)}>
-            <Image width={190} height={285} alt={slug} src={poster} />
-            <h1>{titulo}</h1>
-          </div>
-        );
-      })}
+      <div className={s.container__header}>
+        <h1>PELICULAS</h1>
+        <button>PELICULAS POR CATEGORIA</button>
+      </div>
+      <div className={s.container__peliculas}>
+        {peliculas.map((pelicula) => {
+          const { titulo, poster, slug } = pelicula;
+          return (
+            <div
+              className={s.container__peliculas__movie}
+              key={slug}
+              onClick={() => setMovie(pelicula)}>
+              <Image width={190} height={285} alt={slug} src={poster} />
+              <h1>{titulo}</h1>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 };

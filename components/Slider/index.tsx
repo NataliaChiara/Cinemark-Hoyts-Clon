@@ -1,4 +1,4 @@
-import { Pagination } from 'swiper/modules';
+import { Autoplay, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Image from 'next/image';
 import s from './Slider.module.css';
@@ -12,7 +12,7 @@ const Slider = () => {
   return (
     <Swiper
       className={s.container}
-      modules={[Pagination]}
+      modules={[Pagination, Autoplay]}
       slidesPerView={1}
       pagination
       autoplay

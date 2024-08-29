@@ -56,3 +56,10 @@ export interface TicketType {
   direccion: string;
   nombre: string;
 }
+
+// otros
+
+export interface ScheduleType {
+  cine: CineType;
+  pelicula: PeliculaType;
+}

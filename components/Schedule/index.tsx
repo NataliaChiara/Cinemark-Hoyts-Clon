@@ -1,117 +1,102 @@
-import { ChangeEvent } from 'react';
-import { useState } from 'react';
-import cs from 'classnames';
+import { useEffect, useState } from 'react';
 import s from './Schedule.module.css';
-import { DiaType, FuncionType } from '@/types/model';
-import { Modal } from '@/components';
-import { cines } from '@/lib/dataset';
+import { DiaType, FuncionType, ScheduleType } from '@/types/model';
+import { Modal, MovieDetail, Button } from '@/components';
+import { obtenerInfoPorId } from '@/lib/getInfoById';
 
-const Schedule = ({ movieSlug }: { movieSlug: string }) => {
-  const [cineName, setCineName] = useState('');
-  const [days, setDays] = useState<DiaType[] | undefined>();
-  const [funciones, setFunciones] = useState<FuncionType[] | undefined>();
-  const [selectedDay, setSelectedDay] = useState('');
+interface InfoState {
+  dias: DiaType[];
+  funciones: FuncionType[];
+}
+
+const Schedule = ({ schedule }: {
+  schedule: ScheduleType
+}) => {
+  const { cine, pelicula } = schedule;
+
+  const [info, setInfo] = useState<InfoState | undefined>();
+  const [selectedDay, setSelectedDay] = useState<DiaType | undefined>()
+
   const [selectedFunctionId, setSelectedFunctionId] = useState('');
   const [showModal, setShowModal] = useState(false);
 
-  const handleSelectCine = (event: ChangeEvent<HTMLSelectElement>) => {
-    const selectedCine = cines.find((item) => item.nombre === event.target.value);
-    setCineName(selectedCine!.nombre);
-    const movieDays = selectedCine?.peliculas.find((item) => item.slug === movieSlug)?.dias;
-    setDays(movieDays);
-    if (movieDays!.length > 0) {
-      setFunciones(movieDays![0].funciones);
-    }
-    setSelectedDay(movieDays![0].dia);
-  };
+  function setInfoFunction() {
+    const dias = cine.peliculas.find((item) => item.slug === pelicula.slug)?.dias;
+    const funciones = dias![0].funciones;
+    if (dias && funciones) {
+      setSelectedDay(dias[0])
 
-  const handleSelectDay = (dia: string) => {
-    setSelectedDay(dia);
-    const funciones = days?.find((item) => item.dia === dia)?.funciones;
-    setFunciones(funciones);
-  };
+      setInfo({ dias, funciones });
+    }
+  }
+
+  function updateFunciones(dia: DiaType) {
+    const updatedFunciones = dia.funciones;
+    setSelectedDay(dia)
+    setInfo({ ...info!, funciones: updatedFunciones });
+  }
+
+  useEffect(() => {
+    setInfoFunction();
+  }, [cine, pelicula]);
 
   const handleBuyClick = () => {
-    window.location.href = `http://localhost:3000/ticketera?functionId=${selectedFunctionId}&cine=${cineName}`;
+    window.location.href = `http://localhost:3000/ticketera?functionId=${selectedFunctionId}&cine=${cine.nombre}`;
   };
 
   return (
     <>
       <div className={s.container}>
-        <select
-          className={cs(s.container__button, { [s.container__button__selected]: cineName })}
-          onChange={handleSelectCine}>
-          {!cineName && <option>SELECCIONA UN CINE</option>}
-          {cines.map((item) => (
-            <option key={item.nombre} value={item.nombre}>
-              {item.nombre}
-            </option>
-          ))}
-        </select>
-        {days && (
-          <div className={s.container__days}>
-            {days.map((item) => (
-              <button
-                className={cs(s.container__button, {
-                  [s.container__button__selected]: selectedDay === item.dia
-                })}
-                onClick={() => handleSelectDay(item.dia)}
-                key={item.dia}>
-                {item.dia}
-              </button>
-            ))}
+        <div className={s.container__schedule}>
+          <div className={s.container__schedule__closeBtnContainer}>
+            <Button label='x' action={() => undefined} isCloseButton />
           </div>
-        )}
-        {funciones && (
-          <div className={s.container__hours}>
-            <h2 className={s.container__hours__header}>
-              horarios {cineName} para {selectedDay}
-            </h2>
-            {funciones.map((item) => (
-              <div className={s.container__hours__type} key={item.tipo}>
-                <h2>{item.tipo}</h2>
-                <div className={s.container__hours__type__buttons}>
-                  {item.horarios.map((hora) => (
-                    <button
-                      onClick={() => setSelectedFunctionId(hora.id)}
-                      className={cs(s.container__button, {
-                        [s.container__button__selected]: selectedFunctionId === hora.id
-                      })}
-                      key={hora.id}>
-                      {hora.hora}
-                    </button>
-                  ))}
-                </div>
+          {info && (
+            <div>
+              <div className={s.container__schedule__dias}>
+                {info.dias.map((item) => (
+                  <Button key={item.dia} action={() => updateFunciones(item)} label={item.dia} isActive={item.dia === selectedDay?.dia} />
+                ))}
               </div>
-            ))}
-          </div>
-        )}
-        <button
-          className={cs(s.buy_button, { [s.buy_button__disabled]: !selectedFunctionId })}
-          onClick={() => setShowModal(true)}>
-          COMPRAR
-        </button>
+              <div className={s.container__schedule__funciones}>
+                {info.funciones.map((funcion) => (
+                  <div key={funcion.tipo}>
+                    <h2>{funcion.tipo}</h2>
+                    <div className={s.container__schedule__funciones}>
+                      {funcion.horarios.map((item) => (
+                        <Button key={item.id} action={() => setSelectedFunctionId(item.id)} label={item.hora} isActive={item.id === selectedFunctionId} />
+                      ))}
+                    </div>
+                  </div>
+                ))}
+                <Button action={() => setShowModal(true)} label='comprar' isBuyButton isDisabled={!selectedFunctionId} />
+              </div>
+            </div>
+          )}
+        </div>
+        {/* <MovieDetail movie={pelicula} /> */}
       </div>
 
       {showModal && (
         <Modal>
           <div className={s.modal}>
-            <button className={s.modal__close_btn} onClick={() => setShowModal(false)}>
-              x
-            </button>
+            <div className={s.modal__closeBtnContainer}>
+              <Button isCloseButton label='x' action={() => setShowModal(false)} />
+
+            </div>
             <h2>ATENCION!</h2>
             <p>
-              Su seleccion es {movieSlug.replace('-', ' ').toUpperCase()}, - FALTA TIPO{' '}
-              {selectedDay} FALTA HORA.
+              Su seleccion es {pelicula.titulo} - {obtenerInfoPorId(cine, selectedFunctionId)?.tipo}
+              <br />
+              {selectedDay!.dia}  {obtenerInfoPorId(cine, selectedFunctionId)?.hora}Hs.
             </p>
             <hr />
-            <button className={s.buy_button} onClick={handleBuyClick}>
-              COMPRAR
-            </button>
+            <Button action={handleBuyClick} label='comprar' isBuyButton />
           </div>
         </Modal>
       )}
     </>
+
   );
 };
 

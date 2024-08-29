@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 import s from './page.module.css';
-import { Billboard, Schedule2, SelectComponent, Slider } from '@/components';
+import { Billboard, Schedule, SelectComponent, Slider } from '@/components';
 import { ScheduleType, PeliculaType } from '@/types/model';
 
 export default function Home() {
@@ -12,7 +12,7 @@ export default function Home() {
     <main className={s.main}>
       <Slider />
       <SelectComponent setSchedule={setSchedule} preSelectedMovie={movie} />
-      {schedule && <Schedule2 schedule={schedule} /*refresh={refresh}*/ />}
+      {schedule && <Schedule schedule={schedule} /*refresh={refresh}*/ />}
       <Billboard setMovie={setMovie} />
     </main>
   );

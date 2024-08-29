@@ -53,7 +53,7 @@ const SelectComponent = ({
           </option>
         ))}
       </Select>
-      <Select action={(e: ChangeEvent<HTMLSelectElement>) => handleSelectPelicula(e)} value={currentPelicula?.titulo || ''} isActive={pelicula !== undefined}>
+      <Select action={(e: ChangeEvent<HTMLSelectElement>) => handleSelectPelicula(e)} value={currentPelicula?.titulo || ''} isActive={currentPelicula !== undefined}>
         {!currentPelicula && <option value="">SELECCIONA UNA PELICULA</option>}
         {peliculas.map((pelicula) => (
           <option key={pelicula.titulo} value={pelicula.titulo}>

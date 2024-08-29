@@ -15,6 +15,8 @@ const Schedule2 = ({ schedule }: {
   const { cine, pelicula } = schedule;
 
   const [info, setInfo] = useState<InfoState | undefined>();
+  const [selectedDay, setSelectedDay] = useState<DiaType | undefined>()
+
   const [selectedFunctionId, setSelectedFunctionId] = useState('');
   const [showModal, setShowModal] = useState(false);
 
@@ -22,12 +24,15 @@ const Schedule2 = ({ schedule }: {
     const dias = cine.peliculas.find((item) => item.slug === pelicula.slug)?.dias;
     const funciones = dias![0].funciones;
     if (dias && funciones) {
+      setSelectedDay(dias[0])
+
       setInfo({ dias, funciones });
     }
   }
 
   function updateFunciones(dia: DiaType) {
     const updatedFunciones = dia.funciones;
+    setSelectedDay(dia)
     setInfo({ ...info!, funciones: updatedFunciones });
   }
 
@@ -44,13 +49,13 @@ const Schedule2 = ({ schedule }: {
       <div className={s.container}>
         <div className={s.container__schedule}>
           <div className={s.container__schedule__closeBtnContainer}>
-            <Button label='x' action={undefined} isCloseButton />
+            <Button label='x' action={() => undefined} isCloseButton />
           </div>
           {info && (
             <div>
               <div className={s.container__schedule__dias}>
                 {info.dias.map((item) => (
-                  <Button key={item.dia} action={() => updateFunciones(item)} label={item.dia} />
+                  <Button key={item.dia} action={() => updateFunciones(item)} label={item.dia} isActive={item.dia === selectedDay?.dia} />
                 ))}
               </div>
               <div className={s.container__schedule__funciones}>
@@ -59,12 +64,12 @@ const Schedule2 = ({ schedule }: {
                     <h2>{funcion.tipo}</h2>
                     <div className={s.container__schedule__funciones}>
                       {funcion.horarios.map((item) => (
-                        <Button key={item.id} action={() => setSelectedFunctionId(item.id)} label={item.hora} />
+                        <Button key={item.id} action={() => setSelectedFunctionId(item.id)} label={item.hora} isActive={item.id === selectedFunctionId} />
                       ))}
                     </div>
                   </div>
                 ))}
-                <Button action={() => setShowModal(true)} label='comprar' isBuyButton />
+                <Button action={() => setShowModal(true)} label='comprar' isBuyButton isDisabled={!selectedFunctionId} />
               </div>
             </div>
           )}
@@ -75,14 +80,15 @@ const Schedule2 = ({ schedule }: {
       {showModal && (
         <Modal>
           <div className={s.modal}>
-            <button className={s.modal__close_btn} onClick={() => setShowModal(false)}>
-              x
-            </button>
+            <div className={s.modal__closeBtnContainer}>
+              <Button isCloseButton label='x' action={() => setShowModal(false)} />
+
+            </div>
             <h2>ATENCION!</h2>
             <p>
               Su seleccion es {pelicula.titulo} - {obtenerInfoPorId(cine, selectedFunctionId)?.tipo}
               <br />
-              {obtenerInfoPorId(cine, selectedFunctionId)?.dia}  {obtenerInfoPorId(cine, selectedFunctionId)?.hora}Hs.
+              {selectedDay!.dia}  {obtenerInfoPorId(cine, selectedFunctionId)?.hora}Hs.
             </p>
             <hr />
             <Button action={handleBuyClick} label='comprar' isBuyButton />

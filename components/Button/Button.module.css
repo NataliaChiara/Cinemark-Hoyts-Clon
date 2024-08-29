@@ -5,18 +5,27 @@
   border-radius: 15px;
   padding: 10px;
 
-  &__active {
+  &__isActive {
     background-color: white;
     border-color: white;
     color: black;
   }
 
   &__isBuyButton {
-    opacity: 0.5;
-    background-color: white;
-    border-color: white;
+    width: 200px;
+    height: 45px;
+    border-color: yellow;
     color: black;
-    pointer-events: none;
+    background-color: yellow;
+    pointer-events: all;
+    font-weight: bolder;
+
+    &__disabled {
+      border-color: gray;
+      color: gray;
+      background-color: white;
+      pointer-events: none;
+    }
   }
 
   &__isCloseButton {

@@ -2,6 +2,7 @@ import { ChangeEvent, useEffect, useState, Dispatch, SetStateAction } from 'reac
 import s from './SelectComponent.module.css';
 import { cines, peliculas } from '@/lib/dataset';
 import { CineType, PeliculaType, ScheduleType } from '@/types/model';
+import { Select } from '@/components';
 
 const SelectComponent = ({
   preSelectedMovie,
@@ -44,22 +45,22 @@ const SelectComponent = ({
 
   return (
     <div className={s.container}>
-      <select onChange={handleSelectCine} value={cine?.nombre || ''}>
-        <option value="">SELECCIONA UN CINE</option>
+      <Select action={(e: ChangeEvent<HTMLSelectElement>) => handleSelectCine(e)} value={cine?.nombre || ''} isActive={cine !== undefined}>
+        {!cine && <option value="">SELECCIONA UN CINE</option>}
         {cines.map((cine) => (
           <option key={cine.nombre} value={cine.nombre}>
             {cine.nombre}
           </option>
         ))}
-      </select>
-      <select onChange={handleSelectPelicula} value={currentPelicula?.titulo || ''}>
-        <option value="">SELECCIONA UNA PELICULA</option>
+      </Select>
+      <Select action={(e: ChangeEvent<HTMLSelectElement>) => handleSelectPelicula(e)} value={currentPelicula?.titulo || ''} isActive={pelicula !== undefined}>
+        {!currentPelicula && <option value="">SELECCIONA UNA PELICULA</option>}
         {peliculas.map((pelicula) => (
           <option key={pelicula.titulo} value={pelicula.titulo}>
             {pelicula.titulo}
           </option>
         ))}
-      </select>
+      </Select>
     </div>
   );
 };

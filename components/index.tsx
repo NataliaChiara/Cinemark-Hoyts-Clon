@@ -11,3 +11,5 @@ export { default as Footer } from './Footer';
 export { default as Slider } from './Slider';
 export { default as SelectComponent } from './SelectComponent';
 export { default as Schedule2 } from './Schedule2';
+export { default as Button } from './Button';
+

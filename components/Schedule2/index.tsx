@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import s from './Schedule2.module.css';
 import { DiaType, FuncionType, ScheduleType } from '@/types/model';
-import { Modal } from '@/components';
+import { Modal, MovieDetail, Button } from '@/components';
 import { obtenerInfoPorId } from '@/lib/getInfoById';
 
 interface InfoState {
@@ -42,33 +42,36 @@ const Schedule2 = ({ schedule }: {
   return (
     <>
       <div className={s.container}>
-        <button>eliminar seleccion</button>
-        {info && (
-          <div>
-            <div className={s.container__dias}>
-              {info.dias.map((item) => (
-                <button key={item.dia} onClick={() => updateFunciones(item)}>{item.dia}</button>
-              ))}
-            </div>
-            <div className={s.container__funciones}>
-              {info.funciones.map((funcion) => (
-                <div key={funcion.tipo}>
-                  <h2>{funcion.tipo}</h2>
-                  <div className={s.container__funciones}>
-                    {funcion.horarios.map((item) => (
-                      <button key={item.id} onClick={() => setSelectedFunctionId(item.id)}>{item.hora}</button>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-            <button
-              onClick={() => setShowModal(true)}>
-              COMPRAR
-            </button>
+        <div className={s.container__schedule}>
+          <div className={s.container__schedule__closeBtnContainer}>
+            <Button label='x' action={undefined} isCloseButton />
           </div>
-        )}
+          {info && (
+            <div>
+              <div className={s.container__schedule__dias}>
+                {info.dias.map((item) => (
+                  <Button key={item.dia} action={() => updateFunciones(item)} label={item.dia} />
+                ))}
+              </div>
+              <div className={s.container__schedule__funciones}>
+                {info.funciones.map((funcion) => (
+                  <div key={funcion.tipo}>
+                    <h2>{funcion.tipo}</h2>
+                    <div className={s.container__schedule__funciones}>
+                      {funcion.horarios.map((item) => (
+                        <Button key={item.id} action={() => setSelectedFunctionId(item.id)} label={item.hora} />
+                      ))}
+                    </div>
+                  </div>
+                ))}
+                <Button action={() => setShowModal(true)} label='comprar' isBuyButton />
+              </div>
+            </div>
+          )}
+        </div>
+        {/* <MovieDetail movie={pelicula} /> */}
       </div>
+
       {showModal && (
         <Modal>
           <div className={s.modal}>
@@ -82,9 +85,7 @@ const Schedule2 = ({ schedule }: {
               {obtenerInfoPorId(cine, selectedFunctionId)?.dia}  {obtenerInfoPorId(cine, selectedFunctionId)?.hora}Hs.
             </p>
             <hr />
-            <button className={s.buy_button} onClick={handleBuyClick}>
-              COMPRAR
-            </button>
+            <Button action={handleBuyClick} label='comprar' isBuyButton />
           </div>
         </Modal>
       )}

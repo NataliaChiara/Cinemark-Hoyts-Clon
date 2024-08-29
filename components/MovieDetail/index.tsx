@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import s from './MovieDetail.module.css';
-import { Schedule } from '@/components';
 import { PeliculaType } from '@/types/model';
 
 const MovieDetail = ({ movie }: { movie: PeliculaType }) => {
@@ -9,7 +8,6 @@ const MovieDetail = ({ movie }: { movie: PeliculaType }) => {
 
   return (
     <div className={s.container}>
-      <Schedule movieSlug={slug} />
       <div className={s.container__poster}>
         <Image width={190} height={285} alt={slug} src={poster} />
         <span className={s.container__poster__edad}>{edad}</span>

@@ -28,8 +28,8 @@ const MovieDetail = ({ movie }: { movie: PeliculaType }) => {
           src={`https://www.youtube.com/embed/${trailer.split('youtu.be/')[1]}`}
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen></iframe>
-        <h1>{titulo}</h1>
-        <p>{sinopsis}</p>
+        <h1 className={s.container__trailer__titulo}>{titulo}</h1>
+        <p className={s.container__trailer__sinopsis}>{sinopsis}</p>
       </div>
     </div>
   );

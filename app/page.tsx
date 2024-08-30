@@ -12,7 +12,7 @@ export default function Home() {
     <main className={s.main}>
       <Slider />
       <SelectComponent setSchedule={setSchedule} preSelectedMovie={movie} />
-      {schedule && <Schedule schedule={schedule} /*refresh={refresh}*/ />}
+      {schedule && <Schedule schedule={schedule} refresh={setSchedule} />}
       <Billboard setMovie={setMovie} />
     </main>
   );

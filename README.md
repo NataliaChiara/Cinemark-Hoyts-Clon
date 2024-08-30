@@ -1,8 +1,14 @@
 to do 
 
-estilos schedule
-flechas select
-hoy, manana, textos botones dias schedule
-funcionalidad del boton de cerrar schedule
+-flechas select
+-hoy, manana, textos botones dias schedule
+-estilos ticketera
+-funcionalidad peliculas por categoria
+-login
+-confirmacion de compra con codigo
+-agregar scroll smooth lenis
+-estilos mobile
 
-estilos ticketera
+revisar
+
+-funcionalidad del boton de cerrar schedule

@@ -1,12 +1,15 @@
 .container {
   display: flex;
+  gap: 10px;
+  margin-top: 35px;
 
   &__poster {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    width: 190px;
 
-    &__age {
+    &__edad {
       width: fit-content;
       border: 1px solid white;
       padding: 0 5px 0 3px;
@@ -15,6 +18,7 @@
     &__info {
       color: gray;
       font-weight: light;
+      font-size: 12px;
 
       & strong {
         color: white;
@@ -23,8 +27,23 @@
   }
 
   &__trailer {
-    & video {
-      background-color: aliceblue;
+    width: 360px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    & iframe {
+      width: 100%;
+      height: 200px;
+      border: none;
+    }
+
+    &__titulo {
+      font-size: 18px;
+    }
+
+    &__sinopsis {
+      font-size: 12px;
     }
   }
 }

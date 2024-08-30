@@ -9,6 +9,7 @@
   font-weight: bolder;
   width: 300px;
   position: relative;
+  cursor: pointer;
 
   &__isActive {
     background-color: white;

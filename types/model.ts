@@ -63,3 +63,8 @@ export interface ScheduleType {
   cine: CineType;
   pelicula: PeliculaType;
 }
+
+export interface SelectSeatsType {
+  asientos: AsientosType | undefined;
+  cantidadEntradas: number;
+}

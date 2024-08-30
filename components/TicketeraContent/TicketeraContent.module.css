@@ -1,0 +1,21 @@
+.container {
+  background-color: #e6e6e6;
+  min-height: 100vh;
+  position: relative;
+  padding-top: 60px;
+
+  &__header {
+    background-color: #111111;
+    padding: 15px 0;
+    & h1 {
+      width: 90vw;
+      margin: auto;
+      max-width: 1200px;
+      font-size: 18px;
+    }
+  }
+  &__asientos {
+    position: relative;
+    padding: 50px 100px;
+  }
+}

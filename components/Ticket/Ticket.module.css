@@ -1,0 +1,90 @@
+.position {
+  position: absolute;
+  top: 73px;
+  right: 10vw;
+}
+
+.container {
+  background-color: #f8f8f8;
+  width: fit-content;
+  padding: 50px;
+  position: relative;
+  color: black;
+
+  &::before {
+    content: "";
+    background-image: url("/images/decoration.png");
+    transform: rotate(180deg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 15px;
+    position: absolute;
+    width: 100%;
+    top: -13px;
+    left: 0;
+  }
+
+  &::after {
+    content: "";
+    background-image: url("/images/decoration.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 15px;
+    position: absolute;
+    width: 100%;
+    bottom: -13px;
+    left: 0;
+  }
+
+  &__pelicula {
+    display: flex;
+    gap: 10px;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid black;
+
+    &__info {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      &__titulo {
+        font-size: 20px;
+      }
+
+      &__edad {
+        width: fit-content;
+        border: 1px solid black;
+        padding: 0 5px 0 3px;
+      }
+
+      &__description {
+        line-height: 25px;
+      }
+    }
+  }
+
+  &__entrada {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+
+    &__info {
+      width: 100%;
+      padding-bottom: 30px;
+
+      border-bottom: 1px solid black;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: bolder;
+
+      &__botones {
+        display: flex;
+        gap: 5px;
+      }
+    }
+  }
+}

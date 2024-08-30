@@ -8,6 +8,7 @@ to do
 -confirmacion de compra con codigo
 -agregar scroll smooth lenis
 -estilos mobile
+-agregar username en ticketera
 
 revisar
 

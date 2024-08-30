@@ -2,13 +2,18 @@
 
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
-import { Ticket } from '@/components';
+import { SelectSeats, Ticket } from '@/components';
 import { cines } from '@/lib/dataset';
 import { obtenerInfoPorId } from '@/lib/getInfoById';
-import { TicketType } from '@/types/model';
+import s from './TicketeraContent.module.css'
+import { TicketType, SelectSeatsType } from '@/types/model';
 
 const TicketeraContent = () => {
   const [selectedMovie, setSelectedMovie] = useState<TicketType | undefined>();
+  const [selectSeats, setSelectSeats] = useState<SelectSeatsType>({
+    asientos: undefined,
+    cantidadEntradas: 0
+  });
 
   const searchParams = useSearchParams();
   const functionId = searchParams.get('functionId');
@@ -26,7 +31,20 @@ const TicketeraContent = () => {
     }
   }, [searchParams, cine, functionId]);
 
-  return selectedMovie ? <Ticket SelectedMovie={selectedMovie} /> : null;
+  return selectedMovie ?
+    <div className={s.container}>
+      <div className={s.container__header}>
+        <h1>HOLA USERNAME</h1>
+      </div>
+      <div className={s.container__asientos}>
+        {selectSeats.asientos && (
+          <SelectSeats asientos={selectSeats.asientos} cantidadEntradas={selectSeats.cantidadEntradas} />
+        )}
+      </div>
+
+      <Ticket SelectedMovie={selectedMovie} setSelectSeats={setSelectSeats} />
+    </div>
+    : null;
 };
 
 export default TicketeraContent;

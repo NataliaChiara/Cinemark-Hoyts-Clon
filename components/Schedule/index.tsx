@@ -46,7 +46,7 @@ const Schedule = ({
   }, [cine, pelicula]);
 
   const handleBuyClick = () => {
-    window.location.href = `http://localhost:3000/ticketera?functionId=${selectedFunctionId}&cine=${cine.nombre}`;
+    window.location.href = `https://cinemark-hoyts-clon.vercel.app/ticketera?functionId=${selectedFunctionId}&cine=${cine.nombre}`;
   };
 
   return (

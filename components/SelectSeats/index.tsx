@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
-import s from './SelectSeats.module.css';
 import { AsientosType } from '@/types/model';
+import s from './SelectSeats.module.css';
 
 const SelectSeats = ({
   asientos,

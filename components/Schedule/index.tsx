@@ -1,8 +1,8 @@
 import { Dispatch, SetStateAction, useEffect, useState } from 'react';
-import s from './Schedule.module.css';
-import { DiaType, FuncionType, ScheduleType } from '@/types/model';
 import { Modal, MovieDetail, Button } from '@/components';
 import { obtenerInfoPorId } from '@/lib/getInfoById';
+import { DiaType, FuncionType, ScheduleType } from '@/types/model';
+import s from './Schedule.module.css';
 
 interface InfoState {
   dias: DiaType[];

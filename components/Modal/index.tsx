@@ -1,6 +1,7 @@
+import React from 'react';
 import { motion } from 'framer-motion';
-import s from './Modal.module.css';
 import useLockBodyScroll from '@/hooks/use-lock-body-scroll';
+import s from './Modal.module.css';
 
 const Modal = ({ children }: { children: React.ReactNode }) => {
   useLockBodyScroll();

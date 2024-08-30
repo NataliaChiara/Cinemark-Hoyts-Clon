@@ -1,12 +1,11 @@
+import Image from 'next/image';
 import { Autoplay, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import Image from 'next/image';
+import { slider } from '@/lib/dataset';
 import s from './Slider.module.css';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
-
-import { slider } from '@/lib/dataset';
 
 const Slider = () => {
   return (

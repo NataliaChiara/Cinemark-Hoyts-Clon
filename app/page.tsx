@@ -1,8 +1,8 @@
 'use client';
 import { useState } from 'react';
-import s from './page.module.css';
 import { Billboard, Schedule, SelectComponent, Slider } from '@/components';
 import { ScheduleType, PeliculaType } from '@/types/model';
+import s from './page.module.css';
 
 export default function Home() {
   const [movie, setMovie] = useState<PeliculaType | undefined>();

@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
-import s from './Ticket.module.css';
-import { TicketType } from '@/types/model';
-import { peliculas } from '@/lib/dataset';
 import { SelectSeats } from '@/components';
+import { peliculas } from '@/lib/dataset';
+import { TicketType } from '@/types/model';
+import s from './Ticket.module.css';
 
 const Ticket = ({ SelectedMovie }: { SelectedMovie: TicketType }) => {
   const [movieData, setMovieData] = useState({

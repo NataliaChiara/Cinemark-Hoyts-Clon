@@ -12,4 +12,4 @@ export { default as SelectComponent } from './SelectComponent';
 export { default as Schedule } from './Schedule';
 export { default as Button } from './Button';
 export { default as Select } from './Select';
-
+export { default as TicketeraContent } from './TicketeraContent';

@@ -1,8 +1,8 @@
 import { ChangeEvent, useEffect, useState, Dispatch, SetStateAction } from 'react';
-import s from './SelectComponent.module.css';
+import { Select } from '@/components';
 import { cines, peliculas } from '@/lib/dataset';
 import { CineType, PeliculaType, ScheduleType } from '@/types/model';
-import { Select } from '@/components';
+import s from './SelectComponent.module.css';
 
 const SelectComponent = ({
   preSelectedMovie,
@@ -45,7 +45,10 @@ const SelectComponent = ({
 
   return (
     <div className={s.container}>
-      <Select action={(e: ChangeEvent<HTMLSelectElement>) => handleSelectCine(e)} value={cine?.nombre || ''} isActive={cine !== undefined}>
+      <Select
+        action={(e: ChangeEvent<HTMLSelectElement>) => handleSelectCine(e)}
+        value={cine?.nombre || ''}
+        isActive={cine !== undefined}>
         {!cine && <option value="">SELECCIONA UN CINE</option>}
         {cines.map((cine) => (
           <option key={cine.nombre} value={cine.nombre}>
@@ -53,7 +56,10 @@ const SelectComponent = ({
           </option>
         ))}
       </Select>
-      <Select action={(e: ChangeEvent<HTMLSelectElement>) => handleSelectPelicula(e)} value={currentPelicula?.titulo || ''} isActive={currentPelicula !== undefined}>
+      <Select
+        action={(e: ChangeEvent<HTMLSelectElement>) => handleSelectPelicula(e)}
+        value={currentPelicula?.titulo || ''}
+        isActive={currentPelicula !== undefined}>
         {!currentPelicula && <option value="">SELECCIONA UNA PELICULA</option>}
         {peliculas.map((pelicula) => (
           <option key={pelicula.titulo} value={pelicula.titulo}>

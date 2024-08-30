@@ -1,6 +1,6 @@
 import Image from 'next/image';
-import s from './MovieDetail.module.css';
 import { PeliculaType } from '@/types/model';
+import s from './MovieDetail.module.css';
 
 const MovieDetail = ({ movie }: { movie: PeliculaType }) => {
   const { titulo, sinopsis, genero, duracion, director, actores, trailer, poster, edad, slug } =

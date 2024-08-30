@@ -1,8 +1,8 @@
 import { Dispatch, SetStateAction } from 'react';
 import Image from 'next/image';
-import s from './Billboard.module.css';
 import { peliculas } from '@/lib/dataset';
 import { PeliculaType } from '@/types/model';
+import s from './Billboard.module.css';
 
 const Billboard = ({
   setMovie

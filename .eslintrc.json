@@ -1,5 +1,10 @@
 {
-  "extends": ["eslint:recommended", "next", "next/core-web-vitals", "prettier"],
+  "extends": [
+    "eslint:recommended",
+    "next",
+    "next/core-web-vitals",
+    "prettier"
+  ],
   "plugins": ["prettier"],
   "rules": {
     "prettier/prettier": [
@@ -20,6 +25,7 @@
     "import/order": [
       "error",
       {
+        "groups": ["builtin", "external", "internal", "parent", "sibling", "index"],
         "pathGroups": [
           {
             "pattern": "react",
@@ -27,18 +33,30 @@
             "position": "before"
           }
         ],
-        "pathGroupsExcludedImportTypes": ["react"]
+        "pathGroupsExcludedImportTypes": ["react"],
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        }
       }
     ]
   },
   "env": {
     "browser": true,
     "node": true,
-    "jasmine": true
+    "es6": true,
+    "jest": true
   },
-  "globals": {
-    "global": true,
-    "window": true,
-    "google": true
+  "parserOptions": {
+    "ecmaVersion": 2021,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
   }
 }

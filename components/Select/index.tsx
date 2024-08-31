@@ -1,6 +1,7 @@
 import React from 'react';
 import cs from 'classnames';
 import s from './Select.module.css';
+import Image from 'next/image';
 
 const Select = ({
   children,
@@ -14,12 +15,17 @@ const Select = ({
   isActive: boolean;
 }) => {
   return (
-    <select
-      value={value}
-      onChange={action}
-      className={cs(s.container, { [s.container__isActive]: isActive })}>
-      {children}
-    </select>
+    <div className={s.container}>
+      <Image className={cs(s.container__image, { [s.container__image__isActive]: isActive })}
+        width={16} height={16} src='/images/arrow-down.png' alt='arrow-icon' />
+      <select
+        value={value}
+        onChange={action}
+        className={cs(s.select, { [s.select__isActive]: isActive })}>
+        {children}
+      </select>
+    </div>
+
   );
 };
 

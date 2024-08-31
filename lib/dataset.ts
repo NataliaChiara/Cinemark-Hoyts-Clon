@@ -167,7 +167,8 @@ export const cines: CineType[] = [
         slug: 'alien-romulus',
         dias: [
           {
-            dia: 'jueves 22/08',
+            dia: 'jueves',
+            numero: '22/8',
             funciones: [
               {
                 tipo: '2D SUBTITULADA',
@@ -552,27 +553,33 @@ export const cines: CineType[] = [
             ]
           },
           {
-            dia: 'viernes 23/08',
+            dia: 'viernes',
+            numero: '23/8',
             funciones: []
           },
           {
-            dia: 'sabado 24/08',
+            dia: 'sabado',
+            numero: '24/08',
             funciones: []
           },
           {
-            dia: 'domingo 25/08',
+            dia: 'domingo',
+            numero: '25/08',
             funciones: []
           },
           {
-            dia: 'lunes 26/08',
+            dia: 'lunes',
+            numero: '26/08',
             funciones: []
           },
           {
-            dia: 'martes 27/08',
+            dia: 'martes',
+            numero: '27/08',
             funciones: []
           },
           {
-            dia: 'miercoles 28/08',
+            dia: 'miercoles',
+            numero: '28/08',
             funciones: []
           }
         ]
@@ -581,31 +588,38 @@ export const cines: CineType[] = [
         slug: 'beetlejuice-beetlejuice',
         dias: [
           {
-            dia: 'jueves 22/08',
+            dia: 'jueves',
+            numero: '22/8',
             funciones: []
           },
           {
-            dia: 'viernes 23/08',
+            dia: 'viernes',
+            numero: '23/8',
             funciones: []
           },
           {
-            dia: 'sabado 24/08',
+            dia: 'sabado',
+            numero: '24/08',
             funciones: []
           },
           {
-            dia: 'domingo 25/08',
+            dia: 'domingo',
+            numero: '25/08',
             funciones: []
           },
           {
-            dia: 'lunes 26/08',
+            dia: 'lunes',
+            numero: '26/08',
             funciones: []
           },
           {
-            dia: 'martes 27/08',
+            dia: 'martes',
+            numero: '27/08',
             funciones: []
           },
           {
-            dia: 'miercoles 28/08',
+            dia: 'miercoles',
+            numero: '28/08',
             funciones: []
           }
         ]
@@ -614,31 +628,38 @@ export const cines: CineType[] = [
         slug: 'coraline-15-aniversario',
         dias: [
           {
-            dia: 'jueves 22/08',
+            dia: 'jueves',
+            numero: '22/8',
             funciones: []
           },
           {
-            dia: 'viernes 23/08',
+            dia: 'viernes',
+            numero: '23/8',
             funciones: []
           },
           {
-            dia: 'sabado 24/08',
+            dia: 'sabado',
+            numero: '24/08',
             funciones: []
           },
           {
-            dia: 'domingo 25/08',
+            dia: 'domingo',
+            numero: '25/08',
             funciones: []
           },
           {
-            dia: 'lunes 26/08',
+            dia: 'lunes',
+            numero: '26/08',
             funciones: []
           },
           {
-            dia: 'martes 27/08',
+            dia: 'martes',
+            numero: '27/08',
             funciones: []
           },
           {
-            dia: 'miercoles 28/08',
+            dia: 'miercoles',
+            numero: '28/08',
             funciones: []
           }
         ]
@@ -647,31 +668,38 @@ export const cines: CineType[] = [
         slug: '9-semanas-y-media',
         dias: [
           {
-            dia: 'jueves 22/08',
+            dia: 'jueves',
+            numero: '22/8',
             funciones: []
           },
           {
-            dia: 'viernes 23/08',
+            dia: 'viernes',
+            numero: '23/8',
             funciones: []
           },
           {
-            dia: 'sabado 24/08',
+            dia: 'sabado',
+            numero: '24/08',
             funciones: []
           },
           {
-            dia: 'domingo 25/08',
+            dia: 'domingo',
+            numero: '25/08',
             funciones: []
           },
           {
-            dia: 'lunes 26/08',
+            dia: 'lunes',
+            numero: '26/08',
             funciones: []
           },
           {
-            dia: 'martes 27/08',
+            dia: 'martes',
+            numero: '27/08',
             funciones: []
           },
           {
-            dia: 'miercoles 28/08',
+            dia: 'miercoles',
+            numero: '28/08',
             funciones: []
           }
         ]
@@ -680,31 +708,38 @@ export const cines: CineType[] = [
         slug: 'culpa-cero',
         dias: [
           {
-            dia: 'jueves 22/08',
+            dia: 'jueves',
+            numero: '22/8',
             funciones: []
           },
           {
-            dia: 'viernes 23/08',
+            dia: 'viernes',
+            numero: '23/8',
             funciones: []
           },
           {
-            dia: 'sabado 24/08',
+            dia: 'sabado',
+            numero: '24/08',
             funciones: []
           },
           {
-            dia: 'domingo 25/08',
+            dia: 'domingo',
+            numero: '25/08',
             funciones: []
           },
           {
-            dia: 'lunes 26/08',
+            dia: 'lunes',
+            numero: '26/08',
             funciones: []
           },
           {
-            dia: 'martes 27/08',
+            dia: 'martes',
+            numero: '27/08',
             funciones: []
           },
           {
-            dia: 'miercoles 28/08',
+            dia: 'miercoles',
+            numero: '28/08',
             funciones: []
           }
         ]
@@ -713,31 +748,38 @@ export const cines: CineType[] = [
         slug: 'deadpool-and-wolverine',
         dias: [
           {
-            dia: 'jueves 22/08',
+            dia: 'jueves',
+            numero: '22/8',
             funciones: []
           },
           {
-            dia: 'viernes 23/08',
+            dia: 'viernes',
+            numero: '23/8',
             funciones: []
           },
           {
-            dia: 'sabado 24/08',
+            dia: 'sabado',
+            numero: '24/08',
             funciones: []
           },
           {
-            dia: 'domingo 25/08',
+            dia: 'domingo',
+            numero: '25/08',
             funciones: []
           },
           {
-            dia: 'lunes 26/08',
+            dia: 'lunes',
+            numero: '26/08',
             funciones: []
           },
           {
-            dia: 'martes 27/08',
+            dia: 'martes',
+            numero: '27/08',
             funciones: []
           },
           {
-            dia: 'miercoles 28/08',
+            dia: 'miercoles',
+            numero: '28/08',
             funciones: []
           }
         ]
@@ -746,31 +788,38 @@ export const cines: CineType[] = [
         slug: 'el-cuervo',
         dias: [
           {
-            dia: 'jueves 22/08',
+            dia: 'jueves',
+            numero: '22/8',
             funciones: []
           },
           {
-            dia: 'viernes 23/08',
+            dia: 'viernes',
+            numero: '23/8',
             funciones: []
           },
           {
-            dia: 'sabado 24/08',
+            dia: 'sabado',
+            numero: '24/08',
             funciones: []
           },
           {
-            dia: 'domingo 25/08',
+            dia: 'domingo',
+            numero: '25/08',
             funciones: []
           },
           {
-            dia: 'lunes 26/08',
+            dia: 'lunes',
+            numero: '26/08',
             funciones: []
           },
           {
-            dia: 'martes 27/08',
+            dia: 'martes',
+            numero: '27/08',
             funciones: []
           },
           {
-            dia: 'miercoles 28/08',
+            dia: 'miercoles',
+            numero: '28/08',
             funciones: []
           }
         ]
@@ -779,31 +828,38 @@ export const cines: CineType[] = [
         slug: 'el-reino-de-kensuke',
         dias: [
           {
-            dia: 'jueves 22/08',
+            dia: 'jueves',
+            numero: '22/8',
             funciones: []
           },
           {
-            dia: 'viernes 23/08',
+            dia: 'viernes',
+            numero: '23/8',
             funciones: []
           },
           {
-            dia: 'sabado 24/08',
+            dia: 'sabado',
+            numero: '24/08',
             funciones: []
           },
           {
-            dia: 'domingo 25/08',
+            dia: 'domingo',
+            numero: '25/08',
             funciones: []
           },
           {
-            dia: 'lunes 26/08',
+            dia: 'lunes',
+            numero: '26/08',
             funciones: []
           },
           {
-            dia: 'martes 27/08',
+            dia: 'martes',
+            numero: '27/08',
             funciones: []
           },
           {
-            dia: 'miercoles 28/08',
+            dia: 'miercoles',
+            numero: '28/08',
             funciones: []
           }
         ]
@@ -812,31 +868,38 @@ export const cines: CineType[] = [
         slug: 'hombre-muerto',
         dias: [
           {
-            dia: 'jueves 22/08',
+            dia: 'jueves',
+            numero: '22/8',
             funciones: []
           },
           {
-            dia: 'viernes 23/08',
+            dia: 'viernes',
+            numero: '23/8',
             funciones: []
           },
           {
-            dia: 'sabado 24/08',
+            dia: 'sabado',
+            numero: '24/08',
             funciones: []
           },
           {
-            dia: 'domingo 25/08',
+            dia: 'domingo',
+            numero: '25/08',
             funciones: []
           },
           {
-            dia: 'lunes 26/08',
+            dia: 'lunes',
+            numero: '26/08',
             funciones: []
           },
           {
-            dia: 'martes 27/08',
+            dia: 'martes',
+            numero: '27/08',
             funciones: []
           },
           {
-            dia: 'miercoles 28/08',
+            dia: 'miercoles',
+            numero: '28/08',
             funciones: []
           }
         ]
@@ -845,31 +908,38 @@ export const cines: CineType[] = [
         slug: 'intensamente-2',
         dias: [
           {
-            dia: 'jueves 22/08',
+            dia: 'jueves',
+            numero: '22/8',
             funciones: []
           },
           {
-            dia: 'viernes 23/08',
+            dia: 'viernes',
+            numero: '23/8',
             funciones: []
           },
           {
-            dia: 'sabado 24/08',
+            dia: 'sabado',
+            numero: '24/08',
             funciones: []
           },
           {
-            dia: 'domingo 25/08',
+            dia: 'domingo',
+            numero: '25/08',
             funciones: []
           },
           {
-            dia: 'lunes 26/08',
+            dia: 'lunes',
+            numero: '26/08',
             funciones: []
           },
           {
-            dia: 'martes 27/08',
+            dia: 'martes',
+            numero: '27/08',
             funciones: []
           },
           {
-            dia: 'miercoles 28/08',
+            dia: 'miercoles',
+            numero: '28/08',
             funciones: []
           }
         ]
@@ -878,31 +948,38 @@ export const cines: CineType[] = [
         slug: 'i-am-still',
         dias: [
           {
-            dia: 'jueves 22/08',
+            dia: 'jueves',
+            numero: '22/8',
             funciones: []
           },
           {
-            dia: 'viernes 23/08',
+            dia: 'viernes',
+            numero: '23/8',
             funciones: []
           },
           {
-            dia: 'sabado 24/08',
+            dia: 'sabado',
+            numero: '24/08',
             funciones: []
           },
           {
-            dia: 'domingo 25/08',
+            dia: 'domingo',
+            numero: '25/08',
             funciones: []
           },
           {
-            dia: 'lunes 26/08',
+            dia: 'lunes',
+            numero: '26/08',
             funciones: []
           },
           {
-            dia: 'martes 27/08',
+            dia: 'martes',
+            numero: '27/08',
             funciones: []
           },
           {
-            dia: 'miercoles 28/08',
+            dia: 'miercoles',
+            numero: '28/08',
             funciones: []
           }
         ]
@@ -911,31 +988,38 @@ export const cines: CineType[] = [
         slug: 'la-forja',
         dias: [
           {
-            dia: 'jueves 22/08',
+            dia: 'jueves',
+            numero: '22/8',
             funciones: []
           },
           {
-            dia: 'viernes 23/08',
+            dia: 'viernes',
+            numero: '23/8',
             funciones: []
           },
           {
-            dia: 'sabado 24/08',
+            dia: 'sabado',
+            numero: '24/08',
             funciones: []
           },
           {
-            dia: 'domingo 25/08',
+            dia: 'domingo',
+            numero: '25/08',
             funciones: []
           },
           {
-            dia: 'lunes 26/08',
+            dia: 'lunes',
+            numero: '26/08',
             funciones: []
           },
           {
-            dia: 'martes 27/08',
+            dia: 'martes',
+            numero: '27/08',
             funciones: []
           },
           {
-            dia: 'miercoles 28/08',
+            dia: 'miercoles',
+            numero: '28/08',
             funciones: []
           }
         ]
@@ -950,31 +1034,38 @@ export const cines: CineType[] = [
         slug: 'alien-romulus',
         dias: [
           {
-            dia: 'jueves 22/08',
+            dia: 'jueves',
+            numero: '22/8',
             funciones: []
           },
           {
-            dia: 'viernes 23/08',
+            dia: 'viernes',
+            numero: '23/8',
             funciones: []
           },
           {
-            dia: 'sabado 24/08',
+            dia: 'sabado',
+            numero: '24/08',
             funciones: []
           },
           {
-            dia: 'domingo 25/08',
+            dia: 'domingo',
+            numero: '25/08',
             funciones: []
           },
           {
-            dia: 'lunes 26/08',
+            dia: 'lunes',
+            numero: '26/08',
             funciones: []
           },
           {
-            dia: 'martes 27/08',
+            dia: 'martes',
+            numero: '27/08',
             funciones: []
           },
           {
-            dia: 'miercoles 28/08',
+            dia: 'miercoles',
+            numero: '28/08',
             funciones: []
           }
         ]
@@ -983,31 +1074,38 @@ export const cines: CineType[] = [
         slug: 'beetlejuice-beetlejuice',
         dias: [
           {
-            dia: 'jueves 22/08',
+            dia: 'jueves',
+            numero: '22/8',
             funciones: []
           },
           {
-            dia: 'viernes 23/08',
+            dia: 'viernes',
+            numero: '23/8',
             funciones: []
           },
           {
-            dia: 'sabado 24/08',
+            dia: 'sabado',
+            numero: '24/08',
             funciones: []
           },
           {
-            dia: 'domingo 25/08',
+            dia: 'domingo',
+            numero: '25/08',
             funciones: []
           },
           {
-            dia: 'lunes 26/08',
+            dia: 'lunes',
+            numero: '26/08',
             funciones: []
           },
           {
-            dia: 'martes 27/08',
+            dia: 'martes',
+            numero: '27/08',
             funciones: []
           },
           {
-            dia: 'miercoles 28/08',
+            dia: 'miercoles',
+            numero: '28/08',
             funciones: []
           }
         ]
@@ -1016,31 +1114,38 @@ export const cines: CineType[] = [
         slug: 'coraline-15-aniversario',
         dias: [
           {
-            dia: 'jueves 22/08',
+            dia: 'jueves',
+            numero: '22/8',
             funciones: []
           },
           {
-            dia: 'viernes 23/08',
+            dia: 'viernes',
+            numero: '23/8',
             funciones: []
           },
           {
-            dia: 'sabado 24/08',
+            dia: 'sabado',
+            numero: '24/08',
             funciones: []
           },
           {
-            dia: 'domingo 25/08',
+            dia: 'domingo',
+            numero: '25/08',
             funciones: []
           },
           {
-            dia: 'lunes 26/08',
+            dia: 'lunes',
+            numero: '26/08',
             funciones: []
           },
           {
-            dia: 'martes 27/08',
+            dia: 'martes',
+            numero: '27/08',
             funciones: []
           },
           {
-            dia: 'miercoles 28/08',
+            dia: 'miercoles',
+            numero: '28/08',
             funciones: []
           }
         ]
@@ -1049,31 +1154,38 @@ export const cines: CineType[] = [
         slug: '9-semanas-y-media',
         dias: [
           {
-            dia: 'jueves 22/08',
+            dia: 'jueves',
+            numero: '22/8',
             funciones: []
           },
           {
-            dia: 'viernes 23/08',
+            dia: 'viernes',
+            numero: '23/8',
             funciones: []
           },
           {
-            dia: 'sabado 24/08',
+            dia: 'sabado',
+            numero: '24/08',
             funciones: []
           },
           {
-            dia: 'domingo 25/08',
+            dia: 'domingo',
+            numero: '25/08',
             funciones: []
           },
           {
-            dia: 'lunes 26/08',
+            dia: 'lunes',
+            numero: '26/08',
             funciones: []
           },
           {
-            dia: 'martes 27/08',
+            dia: 'martes',
+            numero: '27/08',
             funciones: []
           },
           {
-            dia: 'miercoles 28/08',
+            dia: 'miercoles',
+            numero: '28/08',
             funciones: []
           }
         ]
@@ -1082,31 +1194,38 @@ export const cines: CineType[] = [
         slug: 'culpa-cero',
         dias: [
           {
-            dia: 'jueves 22/08',
+            dia: 'jueves',
+            numero: '22/8',
             funciones: []
           },
           {
-            dia: 'viernes 23/08',
+            dia: 'viernes',
+            numero: '23/8',
             funciones: []
           },
           {
-            dia: 'sabado 24/08',
+            dia: 'sabado',
+            numero: '24/08',
             funciones: []
           },
           {
-            dia: 'domingo 25/08',
+            dia: 'domingo',
+            numero: '25/08',
             funciones: []
           },
           {
-            dia: 'lunes 26/08',
+            dia: 'lunes',
+            numero: '26/08',
             funciones: []
           },
           {
-            dia: 'martes 27/08',
+            dia: 'martes',
+            numero: '27/08',
             funciones: []
           },
           {
-            dia: 'miercoles 28/08',
+            dia: 'miercoles',
+            numero: '28/08',
             funciones: []
           }
         ]
@@ -1115,31 +1234,38 @@ export const cines: CineType[] = [
         slug: 'deadpool-and-wolverine',
         dias: [
           {
-            dia: 'jueves 22/08',
+            dia: 'jueves',
+            numero: '22/8',
             funciones: []
           },
           {
-            dia: 'viernes 23/08',
+            dia: 'viernes',
+            numero: '23/8',
             funciones: []
           },
           {
-            dia: 'sabado 24/08',
+            dia: 'sabado',
+            numero: '24/08',
             funciones: []
           },
           {
-            dia: 'domingo 25/08',
+            dia: 'domingo',
+            numero: '25/08',
             funciones: []
           },
           {
-            dia: 'lunes 26/08',
+            dia: 'lunes',
+            numero: '26/08',
             funciones: []
           },
           {
-            dia: 'martes 27/08',
+            dia: 'martes',
+            numero: '27/08',
             funciones: []
           },
           {
-            dia: 'miercoles 28/08',
+            dia: 'miercoles',
+            numero: '28/08',
             funciones: []
           }
         ]
@@ -1148,31 +1274,38 @@ export const cines: CineType[] = [
         slug: 'el-cuervo',
         dias: [
           {
-            dia: 'jueves 22/08',
+            dia: 'jueves',
+            numero: '22/8',
             funciones: []
           },
           {
-            dia: 'viernes 23/08',
+            dia: 'viernes',
+            numero: '23/8',
             funciones: []
           },
           {
-            dia: 'sabado 24/08',
+            dia: 'sabado',
+            numero: '24/08',
             funciones: []
           },
           {
-            dia: 'domingo 25/08',
+            dia: 'domingo',
+            numero: '25/08',
             funciones: []
           },
           {
-            dia: 'lunes 26/08',
+            dia: 'lunes',
+            numero: '26/08',
             funciones: []
           },
           {
-            dia: 'martes 27/08',
+            dia: 'martes',
+            numero: '27/08',
             funciones: []
           },
           {
-            dia: 'miercoles 28/08',
+            dia: 'miercoles',
+            numero: '28/08',
             funciones: []
           }
         ]
@@ -1181,31 +1314,38 @@ export const cines: CineType[] = [
         slug: 'el-reino-de-kensuke',
         dias: [
           {
-            dia: 'jueves 22/08',
+            dia: 'jueves',
+            numero: '22/8',
             funciones: []
           },
           {
-            dia: 'viernes 23/08',
+            dia: 'viernes',
+            numero: '23/8',
             funciones: []
           },
           {
-            dia: 'sabado 24/08',
+            dia: 'sabado',
+            numero: '24/08',
             funciones: []
           },
           {
-            dia: 'domingo 25/08',
+            dia: 'domingo',
+            numero: '25/08',
             funciones: []
           },
           {
-            dia: 'lunes 26/08',
+            dia: 'lunes',
+            numero: '26/08',
             funciones: []
           },
           {
-            dia: 'martes 27/08',
+            dia: 'martes',
+            numero: '27/08',
             funciones: []
           },
           {
-            dia: 'miercoles 28/08',
+            dia: 'miercoles',
+            numero: '28/08',
             funciones: []
           }
         ]
@@ -1214,31 +1354,38 @@ export const cines: CineType[] = [
         slug: 'hombre-muerto',
         dias: [
           {
-            dia: 'jueves 22/08',
+            dia: 'jueves',
+            numero: '22/8',
             funciones: []
           },
           {
-            dia: 'viernes 23/08',
+            dia: 'viernes',
+            numero: '23/8',
             funciones: []
           },
           {
-            dia: 'sabado 24/08',
+            dia: 'sabado',
+            numero: '24/08',
             funciones: []
           },
           {
-            dia: 'domingo 25/08',
+            dia: 'domingo',
+            numero: '25/08',
             funciones: []
           },
           {
-            dia: 'lunes 26/08',
+            dia: 'lunes',
+            numero: '26/08',
             funciones: []
           },
           {
-            dia: 'martes 27/08',
+            dia: 'martes',
+            numero: '27/08',
             funciones: []
           },
           {
-            dia: 'miercoles 28/08',
+            dia: 'miercoles',
+            numero: '28/08',
             funciones: []
           }
         ]
@@ -1247,31 +1394,38 @@ export const cines: CineType[] = [
         slug: 'intensamente-2',
         dias: [
           {
-            dia: 'jueves 22/08',
+            dia: 'jueves',
+            numero: '22/8',
             funciones: []
           },
           {
-            dia: 'viernes 23/08',
+            dia: 'viernes',
+            numero: '23/8',
             funciones: []
           },
           {
-            dia: 'sabado 24/08',
+            dia: 'sabado',
+            numero: '24/08',
             funciones: []
           },
           {
-            dia: 'domingo 25/08',
+            dia: 'domingo',
+            numero: '25/08',
             funciones: []
           },
           {
-            dia: 'lunes 26/08',
+            dia: 'lunes',
+            numero: '26/08',
             funciones: []
           },
           {
-            dia: 'martes 27/08',
+            dia: 'martes',
+            numero: '27/08',
             funciones: []
           },
           {
-            dia: 'miercoles 28/08',
+            dia: 'miercoles',
+            numero: '28/08',
             funciones: []
           }
         ]
@@ -1280,31 +1434,38 @@ export const cines: CineType[] = [
         slug: 'i-am-still',
         dias: [
           {
-            dia: 'jueves 22/08',
+            dia: 'jueves',
+            numero: '22/8',
             funciones: []
           },
           {
-            dia: 'viernes 23/08',
+            dia: 'viernes',
+            numero: '23/8',
             funciones: []
           },
           {
-            dia: 'sabado 24/08',
+            dia: 'sabado',
+            numero: '24/08',
             funciones: []
           },
           {
-            dia: 'domingo 25/08',
+            dia: 'domingo',
+            numero: '25/08',
             funciones: []
           },
           {
-            dia: 'lunes 26/08',
+            dia: 'lunes',
+            numero: '26/08',
             funciones: []
           },
           {
-            dia: 'martes 27/08',
+            dia: 'martes',
+            numero: '27/08',
             funciones: []
           },
           {
-            dia: 'miercoles 28/08',
+            dia: 'miercoles',
+            numero: '28/08',
             funciones: []
           }
         ]
@@ -1313,31 +1474,38 @@ export const cines: CineType[] = [
         slug: 'la-forja',
         dias: [
           {
-            dia: 'jueves 22/08',
+            dia: 'jueves',
+            numero: '22/8',
             funciones: []
           },
           {
-            dia: 'viernes 23/08',
+            dia: 'viernes',
+            numero: '23/8',
             funciones: []
           },
           {
-            dia: 'sabado 24/08',
+            dia: 'sabado',
+            numero: '24/08',
             funciones: []
           },
           {
-            dia: 'domingo 25/08',
+            dia: 'domingo',
+            numero: '25/08',
             funciones: []
           },
           {
-            dia: 'lunes 26/08',
+            dia: 'lunes',
+            numero: '26/08',
             funciones: []
           },
           {
-            dia: 'martes 27/08',
+            dia: 'martes',
+            numero: '27/08',
             funciones: []
           },
           {
-            dia: 'miercoles 28/08',
+            dia: 'miercoles',
+            numero: '28/08',
             funciones: []
           }
         ]

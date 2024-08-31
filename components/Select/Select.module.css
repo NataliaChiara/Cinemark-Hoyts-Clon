@@ -1,6 +1,5 @@
-.container {
+.select {
   color: white;
-  text-transform: uppercase;
   border: 1px solid white;
   border-radius: 8px;
   padding: 10px;
@@ -8,12 +7,28 @@
   appearance: none;
   font-weight: bolder;
   width: 300px;
-  position: relative;
   cursor: pointer;
 
   &__isActive {
     background-color: white;
     border-color: white;
     color: black;
+  }
+}
+
+.container {
+  position: relative;
+
+  &__image {
+    width: 16px;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 10px;
+
+    &__isActive {
+      filter: invert();
+    }
   }
 }

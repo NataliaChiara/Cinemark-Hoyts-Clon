@@ -1,8 +1,6 @@
 to do 
 
--flechas select
--hoy, manana, textos botones dias schedule
--estilos ticketera
+-funcionalidad ticketera
 -funcionalidad peliculas por categoria
 -login
 -confirmacion de compra con codigo
@@ -13,3 +11,12 @@ to do
 revisar
 
 -funcionalidad del boton de cerrar schedule
+
+instrucciones de uso:
+
+mail y contraseña admitidos en el login
+
+prueba@prueba.com
+123456#
+
+unica pelicula con informacion, alien romulus, cine unicenter

@@ -46,7 +46,14 @@ const Schedule = ({
   }, [cine, pelicula]);
 
   const handleBuyClick = () => {
-    window.location.href = `https://cinemark-hoyts-clon.vercel.app/ticketera?functionId=${selectedFunctionId}&cine=${cine.nombre}`;
+    if (typeof window !== 'undefined') {
+      const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+      const baseUrl = isLocalhost
+        ? 'http://localhost:3000'
+        : 'https://cinemark-hoyts-clon.vercel.app';
+
+      window.location.href = `${baseUrl}/ticketera?functionId=${selectedFunctionId}&cine=${cine.nombre}`;
+    }
   };
 
   return (
@@ -55,14 +62,18 @@ const Schedule = ({
         {info && (
           <>
             <div className={s.container__dias}>
-              {info.dias.map((item) => (
-                <Button
-                  key={item.dia}
-                  action={() => updateFunciones(item)}
-                  label={item.dia}
-                  isActive={item.dia === selectedDay?.dia}
-                />
-              ))}
+              {info.dias.map((item, index) => {
+                const label = index === 0 ? 'HOY ' + item.numero : index === 1 ? 'mañana ' + item.numero : item.dia + ' ' + item.numero
+
+                return (
+                  <Button
+                    key={item.dia}
+                    action={() => updateFunciones(item)}
+                    label={label}
+                    isActive={item.dia === selectedDay?.dia}
+                  />
+                )
+              })}
             </div>
             <div className={s.container__funciones}>
               <div className={s.container__funciones__closeBtnContainer}>
@@ -71,7 +82,7 @@ const Schedule = ({
               <div className={s.container__funciones__funcion}>
                 <div className={s.container__funciones__funcion__scroll}>
                   <h2 className={s.container__funciones__funcion__scroll__title}>
-                    HORARIOS {cine.nombre} PARA {selectedDay?.dia}
+                    HORARIOS {cine.nombre} PARA {selectedDay?.dia} {selectedDay?.numero}
                   </h2>
                   {info.funciones.map((funcion) => (
                     <div

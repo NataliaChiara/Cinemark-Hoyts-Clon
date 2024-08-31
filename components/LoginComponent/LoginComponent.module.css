@@ -1,0 +1,63 @@
+.container {
+  display: flex;
+  justify-content: center;
+  color: black;
+  margin: 100px 0;
+
+  &__login,
+  &__create {
+    padding: 0 50px;
+    display: flex;
+    flex-direction: column;
+    width: 280px;
+
+    & h2 {
+      font-size: 14px;
+      font-weight: lighter;
+      margin-bottom: 10px;
+    }
+
+    & form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    & label {
+      font-size: 14px;
+      margin-top: 10px;
+    }
+
+    & input {
+      border: none;
+      height: 30px;
+      margin-top: 5px;
+    }
+
+    & button {
+      margin-top: 20px;
+      background-color: black;
+      color: white;
+      border-radius: 10px;
+      padding: 10px;
+      font-weight: bold;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: 0.2s;
+
+      &:hover {
+        background-color: gray;
+      }
+    }
+
+    & a {
+      font-size: 12px;
+      text-align: center;
+      margin-top: 3px;
+    }
+  }
+
+  &__create {
+    height: fit-content;
+    border-left: 2px solid #cacaca;
+  }
+}

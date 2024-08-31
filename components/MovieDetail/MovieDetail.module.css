@@ -8,6 +8,7 @@
     flex-direction: column;
     gap: 10px;
     width: 190px;
+    text-transform: capitalize;
 
     &__edad {
       width: fit-content;
@@ -44,6 +45,7 @@
 
     &__sinopsis {
       font-size: 12px;
+      text-transform: initial;
     }
   }
 }

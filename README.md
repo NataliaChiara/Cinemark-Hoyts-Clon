@@ -1,6 +1,5 @@
 to do 
 
--funcionalidad ticketera
 -funcionalidad peliculas por categoria
 -login
 -confirmacion de compra con codigo

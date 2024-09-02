@@ -5,10 +5,10 @@ import { useSearchParams } from 'next/navigation';
 import { SelectSeats, Ticket } from '@/components';
 import { cines } from '@/lib/dataset';
 import { obtenerInfoPorId } from '@/lib/getInfoById';
-import s from './TicketeraContent.module.css'
+import s from './TicketeraComponent.module.css'
 import { TicketType, SelectSeatsType } from '@/types/model';
 
-const TicketeraContent = () => {
+const TicketeraComponent = () => {
   const [selectedMovie, setSelectedMovie] = useState<TicketType | undefined>();
   const [selectSeats, setSelectSeats] = useState<SelectSeatsType>({
     asientos: undefined,
@@ -47,4 +47,4 @@ const TicketeraContent = () => {
     : null;
 };
 
-export default TicketeraContent;
+export default TicketeraComponent;

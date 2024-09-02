@@ -62,7 +62,7 @@ const SelectComponent = ({
         isActive={currentPelicula !== undefined}>
         {!currentPelicula && <option value="">SELECCIONA UNA PELICULA</option>}
         {peliculas.map((pelicula) => (
-          <option key={pelicula.titulo} value={pelicula.titulo}>
+          <option key={pelicula.slug} value={pelicula.titulo}>
             {pelicula.titulo}
           </option>
         ))}

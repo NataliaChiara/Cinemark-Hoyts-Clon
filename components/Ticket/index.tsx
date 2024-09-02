@@ -59,7 +59,6 @@ const Ticket = ({ SelectedMovie, setSelectSeats }: {
       cantidadEntradas: cantidadEntradas.cantidad
     })
     setDisabled(true)
-    console.log('asdasd')
   }
 
   return (

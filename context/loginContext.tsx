@@ -1,6 +1,6 @@
 'use client'
 
-import React, { createContext, useContext, useState, ReactNode } from 'react';
+import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 
 interface AuthContextType {
   isAuthenticated: boolean;
@@ -25,9 +25,17 @@ interface AuthProviderProps {
 export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
+  useEffect(() => {
+    const storedAuth = localStorage.getItem('isAuthenticated');
+    if (storedAuth) {
+      setIsAuthenticated(JSON.parse(storedAuth));
+    }
+  }, []);
+
   const login = (email: string, password: string): boolean => {
     if (email === 'prueba@prueba.com' && password === '123456#') {
       setIsAuthenticated(true);
+      localStorage.setItem('isAuthenticated', JSON.stringify(true));
       return true;
     }
     return false;
@@ -35,6 +43,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
   const logout = () => {
     setIsAuthenticated(false);
+    localStorage.removeItem('isAuthenticated');
   };
 
   return (

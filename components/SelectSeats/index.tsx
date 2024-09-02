@@ -36,14 +36,14 @@ const SelectSeats = ({
       <div className={s.container__closeBtn}>
         <Button label='<' action={() => undefined} isCloseButton></Button>
       </div>
-      <h1 className={s.container__titulo}>
+      <div className={s.container__titulo}>
         <h2>PANTALLA</h2>
-      </h1>
+      </div>
       <div className={s.container__asientos}>
-        {asientos.filas.map((fila) => (
-          <ul key={fila.nombre} className={s.container__asientos__fila}>
+        {asientos.filas.map((fila, index) => (
+          <ul key={index} className={s.container__asientos__fila}>
             <li>{fila.nombre}</li>
-            {fila.asientos.map((asiento) => {
+            {fila.asientos.map((asiento, index) => {
               let esAsientoReservado;
               if (fila.asientosReservados) {
                 esAsientoReservado = fila.asientosReservados?.includes(asiento);
@@ -65,7 +65,7 @@ const SelectSeats = ({
                   }}
                   onClick={() => handleSelect(`${fila.nombre}-${asiento}`)}
                   className={s.container__asientos__fila__asiento}
-                  key={`${fila.nombre}-${asiento}`}>
+                  key={`${fila.nombre}-${index + 1}`}>
                   {asiento}
                 </li>
               );

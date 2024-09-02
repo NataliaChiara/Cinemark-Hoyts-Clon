@@ -67,7 +67,7 @@ const Schedule = ({
 
                 return (
                   <Button
-                    key={item.dia}
+                    key={item.dia + ' ' + item.numero}
                     action={() => updateFunciones(item)}
                     label={label}
                     isActive={item.dia === selectedDay?.dia}
@@ -84,10 +84,10 @@ const Schedule = ({
                   <h2 className={s.container__funciones__funcion__scroll__title}>
                     HORARIOS {cine.nombre} PARA {selectedDay?.dia} {selectedDay?.numero}
                   </h2>
-                  {info.funciones.map((funcion) => (
+                  {info.funciones.map((funcion, index) => (
                     <div
                       className={s.container__funciones__funcion__scroll__tipo}
-                      key={funcion.tipo}>
+                      key={index}>
                       <h2>{funcion.tipo}</h2>
                       <div className={s.container__funciones__funcion__scroll__tipo__horarios}>
                         {funcion.horarios.map((item) => (

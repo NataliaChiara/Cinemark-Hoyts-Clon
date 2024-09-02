@@ -160,6 +160,7 @@ export const peliculas: PeliculaType[] = [
 
 export const cines: CineType[] = [
   {
+    slug: 'hoyts-unicenter',
     nombre: 'HOYTS UNICENTER',
     direccion: 'PARANÁ 3745, UNICENTER SHOPPING',
     peliculas: [
@@ -1027,6 +1028,7 @@ export const cines: CineType[] = [
     ]
   },
   {
+    slug: 'hoyts-abasto',
     nombre: 'HOYTS ABASTO',
     direccion: 'Av. Corrientes 3247, Abasto Shopping',
     peliculas: [

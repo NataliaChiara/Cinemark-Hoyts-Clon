@@ -11,10 +11,9 @@ const Billboard = ({
 }) => {
   return (
     <div className={s.container}>
-      <div className={s.container__header}>
-        <h1>PELICULAS</h1>
-        <button>PELICULAS POR CATEGORIA</button>
-      </div>
+
+      <h1>PELICULAS</h1>
+
       <div className={s.container__peliculas}>
         {peliculas.map((pelicula) => {
           const { titulo, poster, slug } = pelicula;

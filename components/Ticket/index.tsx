@@ -1,15 +1,12 @@
-import { useEffect, useState, Dispatch, SetStateAction } from 'react';
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
-import { SelectSeats, Button } from '@/components';
+import { Button } from '@/components';
 import { peliculas } from '@/lib/dataset';
-import { AsientosType, TicketType } from '@/types/model';
+import { TicketType, SelectSeatsType } from '@/types/model';
 import s from './Ticket.module.css';
 
-const Ticket = ({ SelectedMovie, setSelectSeats }: {
-  SelectedMovie: TicketType, setSelectSeats: Dispatch<SetStateAction<{
-    asientos: AsientosType | undefined;
-    cantidadEntradas: number;
-  }>>
+const Ticket = ({ SelectedMovie, handleConfirm, showSeats }: {
+  SelectedMovie: TicketType, handleConfirm: (data: SelectSeatsType) => void, showSeats: boolean
 }) => {
   const [movieData, setMovieData] = useState({
     poster: '',
@@ -22,8 +19,6 @@ const Ticket = ({ SelectedMovie, setSelectSeats }: {
     cantidad: 1,
     valor: 9000
   });
-
-  const [disabled, setDisabled] = useState(false)
 
   useEffect(() => {
     const movieData = peliculas.find((movie) => movie.slug === SelectedMovie.slug);
@@ -51,14 +46,6 @@ const Ticket = ({ SelectedMovie, setSelectSeats }: {
     if (cantidadEntradas.cantidad > 1) {
       setCantidadEntradas({ cantidad: cantidadEntradas.cantidad - 1, valor: (cantidadEntradas.cantidad - 1) * 9000 });
     }
-  }
-
-  function handleSelect() {
-    setSelectSeats({
-      asientos: SelectedMovie?.asientos!,
-      cantidadEntradas: cantidadEntradas.cantidad
-    })
-    setDisabled(true)
   }
 
   return (
@@ -90,7 +77,10 @@ const Ticket = ({ SelectedMovie, setSelectSeats }: {
               <Button action={addEntradas} label='+' isCloseButton></Button>
             </div>
           </div>
-          <Button action={handleSelect} isBuyButton label='CONFIRMAR' isDisabled={disabled}></Button>
+          <Button action={() => handleConfirm({
+            asientos: SelectedMovie?.asientos!,
+            cantidadEntradas: cantidadEntradas.cantidad
+          })} isBuyButton label='CONFIRMAR' isDisabled={showSeats}></Button>
         </div>
       </div>
     </div >

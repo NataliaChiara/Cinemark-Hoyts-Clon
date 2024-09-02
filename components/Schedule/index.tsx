@@ -52,7 +52,7 @@ const Schedule = ({
         ? 'http://localhost:3000'
         : 'https://cinemark-hoyts-clon.vercel.app';
 
-      window.location.href = `${baseUrl}/ticketera?functionId=${selectedFunctionId}&cine=${cine.nombre}`;
+      window.location.href = `${baseUrl}/ticketera?functionId=${selectedFunctionId}&cine=${cine.slug}`;
     }
   };
 

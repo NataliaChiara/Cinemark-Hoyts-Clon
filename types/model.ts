@@ -38,6 +38,7 @@ export interface DiaType {
   funciones: FuncionType[];
 }
 export interface CineType {
+  slug: string;
   nombre: string;
   direccion: string;
   peliculas: {

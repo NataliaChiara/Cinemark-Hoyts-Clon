@@ -1,7 +1,13 @@
 .container {
-  width: 90vw;
-  max-width: 1200px;
-  margin: 20px auto;
+  width: 300px;
   display: flex;
+  flex-direction: column;
   gap: 10px;
+  margin: 20px auto;
+
+  @media (--large) {
+    width: 90vw;
+    max-width: 1200px;
+    flex-direction: row;
+  }
 }

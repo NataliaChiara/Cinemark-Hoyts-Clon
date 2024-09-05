@@ -7,8 +7,20 @@ import { cines } from '@/lib/dataset';
 import { obtenerInfoPorId } from '@/lib/getInfoById';
 import s from './TicketeraComponent.module.css'
 import { TicketType, SelectSeatsType } from '@/types/model';
+import { useAuth } from '@/context/loginContext';
+import { useRouter } from 'next/navigation';
 
 const TicketeraComponent = () => {
+  const { isAuthenticated, userMail } = useAuth();
+  const router = useRouter();
+
+  useEffect(() => {
+    if (isAuthenticated === false) {
+      router.push('/login');
+    }
+  }, [isAuthenticated, router]);
+
+
   const [selectedMovie, setSelectedMovie] = useState<TicketType | undefined>();
   const [showSeats, setShowSeats] = useState(false);
   const [selectSeats, setSelectSeats] = useState<SelectSeatsType>({
@@ -36,17 +48,18 @@ const TicketeraComponent = () => {
     setShowSeats(true)
   }
 
+
   return selectedMovie &&
     <div className={s.container}>
       <div className={s.container__header}>
-        <h1>HOLA USERNAME</h1>
+        <h1>HOLA {userMail.toUpperCase()}</h1>
       </div>
+      <Ticket SelectedMovie={selectedMovie} handleConfirm={handleConfirm} showSeats={showSeats} />
       <div className={s.container__asientos}>
         {selectSeats.asientos && showSeats && (
           <SelectSeats setShowSeats={setShowSeats} selectedMovie={selectedMovie} asientos={selectSeats.asientos} cantidadEntradas={selectSeats.cantidadEntradas} />
         )}
       </div>
-      <Ticket SelectedMovie={selectedMovie} handleConfirm={handleConfirm} showSeats={showSeats} />
     </div>
 };
 

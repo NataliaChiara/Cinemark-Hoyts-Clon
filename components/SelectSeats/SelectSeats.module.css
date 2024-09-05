@@ -5,11 +5,24 @@
   gap: 30px;
   color: black;
   width: fit-content;
+  margin: 50px auto;
+  padding-bottom: 20px;
+
+  @media (--large) {
+    margin: initial;
+    padding-bottom: 0;
+  }
 
   &__closeBtn {
     position: absolute;
-    left: 30px;
-    top: 30px;
+    left: 20px;
+    top: 20px;
+    z-index: 9999;
+
+    @media (--large) {
+      left: 30px;
+      top: 30px;
+    }
   }
 
   &__titulo {

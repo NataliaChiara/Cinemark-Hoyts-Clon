@@ -1,15 +1,23 @@
 .position {
-  position: absolute;
-  top: 73px;
-  right: 10vw;
+  @media (--large) {
+    position: absolute;
+    top: 73px;
+    right: 10vw;
+  }
 }
 
 .container {
   background-color: #f8f8f8;
   width: fit-content;
-  padding: 50px;
   position: relative;
+  padding: 20px;
   color: black;
+  margin-top: 30px;
+
+  @media (--large) {
+    padding: 50px;
+    margin-top: 0;
+  }
 
   &::before {
     content: "";

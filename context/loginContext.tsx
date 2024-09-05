@@ -6,6 +6,7 @@ interface AuthContextType {
   isAuthenticated: boolean | undefined;
   login: (email: string, password: string) => boolean;
   logout: () => void;
+  userMail: string;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -24,11 +25,18 @@ interface AuthProviderProps {
 
 export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState<boolean | undefined>(undefined);
+  const [userMail, setUserMail] = useState<string>('');
 
   useEffect(() => {
     const storedAuth = localStorage.getItem('isAuthenticated');
+    const storedMail = localStorage.getItem('userMail');
+
     if (storedAuth) {
       setIsAuthenticated(JSON.parse(storedAuth));
+    }
+
+    if (storedMail) {
+      setUserMail(storedMail);
     }
   }, []);
 
@@ -36,6 +44,9 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     if (email === 'prueba@prueba.com' && password === '123456#') {
       setIsAuthenticated(true);
       localStorage.setItem('isAuthenticated', JSON.stringify(true));
+      localStorage.setItem('userMail', email);
+      setUserMail(email);
+      console.log('login', email);
       return true;
     }
     return false;
@@ -43,11 +54,13 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
   const logout = () => {
     setIsAuthenticated(false);
+    setUserMail('');
     localStorage.removeItem('isAuthenticated');
+    localStorage.removeItem('userMail');
   };
 
   return (
-    <AuthContext.Provider value={{ isAuthenticated, login, logout }}>
+    <AuthContext.Provider value={{ isAuthenticated, login, logout, userMail }}>
       {children}
     </AuthContext.Provider>
   );

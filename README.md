@@ -1,7 +1,6 @@
 to do 
 
 -estilos mobile
--agregar username en ticketera
 
 instrucciones de uso:
 

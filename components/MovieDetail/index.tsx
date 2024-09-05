@@ -9,7 +9,7 @@ const MovieDetail = ({ movie }: { movie: PeliculaType }) => {
   return (
     <div className={s.container}>
       <div className={s.container__poster}>
-        <Image width={190} height={285} alt={slug} src={poster} />
+        <Image width={300} height={395} alt={slug} src={poster} />
         <span className={s.container__poster__edad}>{edad}</span>
         <p className={s.container__poster__info}>
           Género: <strong>{genero}</strong>

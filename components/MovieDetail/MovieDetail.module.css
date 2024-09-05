@@ -1,14 +1,32 @@
 .container {
   display: flex;
+  flex-direction: column;
   gap: 10px;
-  margin-top: 35px;
+  margin-top: 20px;
+
+  @media (--large) {
+    flex-direction: row;
+    margin-top: 35px;
+  }
 
   &__poster {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    width: 190px;
+    width: 300px;
+    margin: auto;
     text-transform: capitalize;
+
+    @media (--large) {
+      margin: initial;
+      width: 190px;
+    }
+
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
 
     &__edad {
       width: fit-content;
@@ -28,10 +46,14 @@
   }
 
   &__trailer {
-    width: 360px;
+    width: 300px;
     display: flex;
     flex-direction: column;
     gap: 15px;
+
+    @media (--large) {
+      width: 360px;
+    }
 
     & iframe {
       width: 100%;

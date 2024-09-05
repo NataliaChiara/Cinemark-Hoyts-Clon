@@ -16,6 +16,8 @@
   }
   &__asientos {
     position: relative;
-    padding: 50px 100px;
+    @media (--large) {
+      padding: 50px 100px;
+    }
   }
 }

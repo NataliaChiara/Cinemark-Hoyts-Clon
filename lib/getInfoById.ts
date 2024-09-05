@@ -1,15 +1,15 @@
-import { CineType, TicketType } from '@/types/model';
+import { CineType, TicketType } from "@/types/model";
 
 export function obtenerInfoPorId(objeto: CineType, idBuscado: string) {
   let resultado: TicketType = {
     asientos: undefined,
-    hora: '',
-    sala: '',
-    tipo: '',
-    dia: '',
-    slug: '',
-    direccion: '',
-    nombre: ''
+    hora: "",
+    sala: "",
+    tipo: "",
+    dia: "",
+    slug: "",
+    direccion: "",
+    nombre: "",
   };
 
   for (let pelicula of objeto.peliculas) {
@@ -25,7 +25,7 @@ export function obtenerInfoPorId(objeto: CineType, idBuscado: string) {
               dia: dia.dia,
               slug: pelicula.slug,
               direccion: objeto.direccion,
-              nombre: objeto.nombre
+              nombre: objeto.nombre,
             };
             return resultado;
           }

@@ -1,5 +1,5 @@
-import cs from 'classnames';
-import s from './Button.module.css';
+import cs from "classnames";
+import s from "./Button.module.css";
 
 const Button = ({
   label,
@@ -7,7 +7,7 @@ const Button = ({
   isBuyButton,
   isCloseButton,
   isActive,
-  isDisabled
+  isDisabled,
 }: {
   label: string;
   action: () => void;
@@ -20,7 +20,7 @@ const Button = ({
     [s.container__isBuyButton]: isBuyButton,
     [s.container__isCloseButton]: isCloseButton,
     [s.container__isActive]: isActive,
-    [s.container__isBuyButton__disabled]: isBuyButton && isDisabled
+    [s.container__isBuyButton__disabled]: isBuyButton && isDisabled,
   });
 
   return (

@@ -1,29 +1,38 @@
-import { ChangeEvent, useEffect, useState, Dispatch, SetStateAction } from 'react';
-import { Select } from '@/components';
-import { cines, peliculas } from '@/lib/dataset';
-import { CineType, PeliculaType, ScheduleType } from '@/types/model';
-import s from './SelectComponent.module.css';
+import {
+  ChangeEvent,
+  useEffect,
+  useState,
+  Dispatch,
+  SetStateAction,
+} from "react";
+import { Select } from "@/components";
+import { cines, peliculas } from "@/lib/dataset";
+import { CineType, PeliculaType, ScheduleType } from "@/types/model";
+import s from "./SelectComponent.module.css";
 
 const SelectComponent = ({
   preSelectedMovie,
-  setSchedule
+  setSchedule,
 }: {
   preSelectedMovie?: PeliculaType;
   setSchedule: Dispatch<SetStateAction<ScheduleType | undefined>>;
 }) => {
   const [cine, setCine] = useState<CineType | undefined>();
   const [pelicula, setPelicula] = useState<PeliculaType | undefined>();
-  const [lastUpdated, setLastUpdated] = useState<'preSelected' | 'manual' | null>(null);
+  const [lastUpdated, setLastUpdated] = useState<
+    "preSelected" | "manual" | null
+  >(null);
 
   useEffect(() => {
     if (preSelectedMovie) {
-      setLastUpdated('preSelected');
+      setLastUpdated("preSelected");
     }
   }, [preSelectedMovie]);
 
   useEffect(() => {
     if (cine) {
-      const selectedPelicula = lastUpdated === 'preSelected' ? preSelectedMovie : pelicula;
+      const selectedPelicula =
+        lastUpdated === "preSelected" ? preSelectedMovie : pelicula;
       if (selectedPelicula) {
         setSchedule({ cine, pelicula: selectedPelicula });
       }
@@ -31,24 +40,30 @@ const SelectComponent = ({
   }, [cine, pelicula, preSelectedMovie, setSchedule, lastUpdated]);
 
   const handleSelectCine = (event: ChangeEvent<HTMLSelectElement>) => {
-    const selectedCine = cines.find((item) => item.nombre === event.target.value);
+    const selectedCine = cines.find(
+      (item) => item.nombre === event.target.value,
+    );
     setCine(selectedCine);
   };
 
   const handleSelectPelicula = (event: ChangeEvent<HTMLSelectElement>) => {
-    const updatedPelicula = peliculas.find((item) => item.titulo === event.target.value);
+    const updatedPelicula = peliculas.find(
+      (item) => item.titulo === event.target.value,
+    );
     setPelicula(updatedPelicula);
-    setLastUpdated('manual');
+    setLastUpdated("manual");
   };
 
-  const currentPelicula = lastUpdated === 'preSelected' ? preSelectedMovie : pelicula;
+  const currentPelicula =
+    lastUpdated === "preSelected" ? preSelectedMovie : pelicula;
 
   return (
     <div className={s.container}>
       <Select
         action={(e: ChangeEvent<HTMLSelectElement>) => handleSelectCine(e)}
-        value={cine?.nombre || ''}
-        isActive={cine !== undefined}>
+        value={cine?.nombre || ""}
+        isActive={cine !== undefined}
+      >
         {!cine && <option value="">SELECCIONA UN CINE</option>}
         {cines.map((cine) => (
           <option key={cine.nombre} value={cine.nombre}>
@@ -58,8 +73,9 @@ const SelectComponent = ({
       </Select>
       <Select
         action={(e: ChangeEvent<HTMLSelectElement>) => handleSelectPelicula(e)}
-        value={currentPelicula?.titulo || ''}
-        isActive={currentPelicula !== undefined}>
+        value={currentPelicula?.titulo || ""}
+        isActive={currentPelicula !== undefined}
+      >
         {!currentPelicula && <option value="">SELECCIONA UNA PELICULA</option>}
         {peliculas.map((pelicula) => (
           <option key={pelicula.slug} value={pelicula.titulo}>

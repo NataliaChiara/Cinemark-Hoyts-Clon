@@ -29,9 +29,7 @@
     [
       "postcss-pxtorem",
       {
-        "propList": [
-          "*"
-        ]
+        "propList": ["*"]
       }
     ],
     "postcss-nested"

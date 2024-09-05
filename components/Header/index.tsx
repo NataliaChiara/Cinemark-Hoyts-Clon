@@ -1,8 +1,7 @@
-import Image from 'next/image';
-import s from './Header.module.css';
+import Image from "next/image";
+import s from "./Header.module.css";
 
 const Header = () => {
-
   return (
     <div className={s.container}>
       <div className={s.container__content}>

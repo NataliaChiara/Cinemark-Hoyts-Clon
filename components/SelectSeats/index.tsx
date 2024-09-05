@@ -1,24 +1,25 @@
-import { useState, Dispatch, SetStateAction } from 'react';
+import { useState, Dispatch, SetStateAction } from "react";
 
-import { AsientosType, TicketType } from '@/types/model';
-import s from './SelectSeats.module.css';
-import { Button, Modal } from '@/components';
+import { AsientosType, TicketType } from "@/types/model";
+import s from "./SelectSeats.module.css";
+import { Button, Modal } from "@/components";
 
 const SelectSeats = ({
   asientos,
   cantidadEntradas,
   selectedMovie,
-  setShowSeats
+  setShowSeats,
 }: {
   asientos: AsientosType;
   cantidadEntradas: number;
   selectedMovie: TicketType;
-  setShowSeats: Dispatch<SetStateAction<boolean>>
+  setShowSeats: Dispatch<SetStateAction<boolean>>;
 }) => {
-  const [asientosSeleccionados, setAsientosSeleccionados] = useState<string[]>([]);
-  const [disabled, setDisabled] = useState(true)
+  const [asientosSeleccionados, setAsientosSeleccionados] = useState<string[]>(
+    [],
+  );
+  const [disabled, setDisabled] = useState(true);
   const [showModal, setShowModal] = useState(false);
-
 
   function handleSelect(asiento: string) {
     setAsientosSeleccionados((prev) => {
@@ -39,12 +40,15 @@ const SelectSeats = ({
 
   const currentTimestamp = Math.floor(Date.now() / 1000);
 
-
   return (
     <>
       <div className={s.container}>
         <div className={s.container__closeBtn}>
-          <Button label='<' action={() => setShowSeats(false)} isCloseButton></Button>
+          <Button
+            label="<"
+            action={() => setShowSeats(false)}
+            isCloseButton
+          ></Button>
         </div>
         <div className={s.container__titulo}>
           <h2>PANTALLA</h2>
@@ -56,26 +60,30 @@ const SelectSeats = ({
               {fila.asientos.map((asiento, index) => {
                 let esAsientoReservado;
                 if (fila.asientosReservados) {
-                  esAsientoReservado = fila.asientosReservados?.includes(asiento);
+                  esAsientoReservado =
+                    fila.asientosReservados?.includes(asiento);
                 }
                 let esAsientoSeleccionado;
                 if (asientosSeleccionados) {
-                  esAsientoSeleccionado = asientosSeleccionados.includes(`${fila.nombre}-${asiento}`);
+                  esAsientoSeleccionado = asientosSeleccionados.includes(
+                    `${fila.nombre}-${asiento}`,
+                  );
                 }
                 return (
                   <li
                     style={{
                       backgroundColor: esAsientoReservado
-                        ? 'red'
+                        ? "red"
                         : esAsientoSeleccionado
-                          ? 'yellow'
-                          : 'white',
-                      opacity: asiento === '' ? 0 : 1,
-                      pointerEvents: esAsientoReservado ? 'none' : 'all'
+                          ? "yellow"
+                          : "white",
+                      opacity: asiento === "" ? 0 : 1,
+                      pointerEvents: esAsientoReservado ? "none" : "all",
                     }}
                     onClick={() => handleSelect(`${fila.nombre}-${asiento}`)}
                     className={s.container__asientos__fila__asiento}
-                    key={`${fila.nombre}-${index + 1}`}>
+                    key={`${fila.nombre}-${index + 1}`}
+                  >
                     {asiento}
                   </li>
                 );
@@ -84,13 +92,22 @@ const SelectSeats = ({
             </ul>
           ))}
         </div>
-        <Button label='CONFIRMAR' action={() => setShowModal(true)} isBuyButton isDisabled={disabled}></Button>
+        <Button
+          label="CONFIRMAR"
+          action={() => setShowModal(true)}
+          isBuyButton
+          isDisabled={disabled}
+        ></Button>
       </div>
       {showModal && (
         <Modal>
           <div className={s.modal}>
             <div className={s.modal__closeBtnContainer}>
-              <Button isCloseButton label="x" action={() => setShowModal(false)} />
+              <Button
+                isCloseButton
+                label="x"
+                action={() => setShowModal(false)}
+              />
             </div>
             <h2>ATENCION!</h2>
             <p>
@@ -98,14 +115,15 @@ const SelectSeats = ({
               <br />
               {selectedMovie.dia} a las {selectedMovie.hora}Hs.
               <br />
-              Asientos: {asientosSeleccionados.join(', ')}
+              Asientos: {asientosSeleccionados.join(", ")}
             </p>
             <hr />
-            <h2>codigo: <strong>{currentTimestamp}</strong></h2>
+            <h2>
+              codigo: <strong>{currentTimestamp}</strong>
+            </h2>
           </div>
         </Modal>
       )}
-
     </>
   );
 };

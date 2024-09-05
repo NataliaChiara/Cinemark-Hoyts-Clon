@@ -3,10 +3,10 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        hostname: 'static.cinemarkhoyts.com.ar'
-      }
-    ]
-  }
+        hostname: "static.cinemarkhoyts.com.ar",
+      },
+    ],
+  },
 };
 
 export default nextConfig;

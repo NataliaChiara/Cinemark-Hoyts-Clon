@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { Suspense } from 'react';
-import { TicketeraComponent } from '@/components';
+import { Suspense } from "react";
+import { TicketeraComponent } from "@/components";
 
 export default function Ticketera() {
   return (

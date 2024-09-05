@@ -1,8 +1,8 @@
-import { Dispatch, SetStateAction, useEffect, useState } from 'react';
-import { Modal, MovieDetail, Button } from '@/components';
-import { obtenerInfoPorId } from '@/lib/getInfoById';
-import { DiaType, FuncionType, ScheduleType } from '@/types/model';
-import s from './Schedule.module.css';
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
+import { Modal, MovieDetail, Button } from "@/components";
+import { obtenerInfoPorId } from "@/lib/getInfoById";
+import { DiaType, FuncionType, ScheduleType } from "@/types/model";
+import s from "./Schedule.module.css";
 
 interface InfoState {
   dias: DiaType[];
@@ -11,7 +11,7 @@ interface InfoState {
 
 const Schedule = ({
   schedule,
-  refresh
+  refresh,
 }: {
   schedule: ScheduleType;
   refresh: Dispatch<SetStateAction<ScheduleType | undefined>>;
@@ -21,11 +21,13 @@ const Schedule = ({
   const [info, setInfo] = useState<InfoState | undefined>();
   const [selectedDay, setSelectedDay] = useState<DiaType | undefined>();
 
-  const [selectedFunctionId, setSelectedFunctionId] = useState('');
+  const [selectedFunctionId, setSelectedFunctionId] = useState("");
   const [showModal, setShowModal] = useState(false);
 
   function setInfoFunction() {
-    const dias = cine.peliculas.find((item) => item.slug === pelicula.slug)?.dias;
+    const dias = cine.peliculas.find(
+      (item) => item.slug === pelicula.slug,
+    )?.dias;
     const funciones = dias![0].funciones;
     if (dias && funciones) {
       setSelectedDay(dias[0]);
@@ -46,11 +48,13 @@ const Schedule = ({
   }, [cine, pelicula]);
 
   const handleBuyClick = () => {
-    if (typeof window !== 'undefined') {
-      const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+    if (typeof window !== "undefined") {
+      const isLocalhost =
+        window.location.hostname === "localhost" ||
+        window.location.hostname === "127.0.0.1";
       const baseUrl = isLocalhost
-        ? 'http://localhost:3000'
-        : 'https://cinemark-hoyts-clon.vercel.app';
+        ? "http://localhost:3000"
+        : "https://cinemark-hoyts-clon.vercel.app";
 
       window.location.href = `${baseUrl}/ticketera?functionId=${selectedFunctionId}&cine=${cine.slug}`;
     }
@@ -63,33 +67,50 @@ const Schedule = ({
           <>
             <div className={s.container__dias}>
               {info.dias.map((item, index) => {
-                const label = index === 0 ? 'HOY ' + item.numero : index === 1 ? 'mañana ' + item.numero : item.dia + ' ' + item.numero
+                const label =
+                  index === 0
+                    ? "HOY " + item.numero
+                    : index === 1
+                      ? "mañana " + item.numero
+                      : item.dia + " " + item.numero;
 
                 return (
                   <Button
-                    key={item.dia + ' ' + item.numero}
+                    key={item.dia + " " + item.numero}
                     action={() => updateFunciones(item)}
                     label={label}
                     isActive={item.dia === selectedDay?.dia}
                   />
-                )
+                );
               })}
             </div>
             <div className={s.container__funciones}>
               <div className={s.container__funciones__closeBtnContainer}>
-                <Button label="x" action={() => refresh(undefined)} isCloseButton />
+                <Button
+                  label="x"
+                  action={() => refresh(undefined)}
+                  isCloseButton
+                />
               </div>
               <div className={s.container__funciones__funcion}>
                 <div className={s.container__funciones__funcion__scroll}>
-                  <h2 className={s.container__funciones__funcion__scroll__title}>
-                    HORARIOS {cine.nombre} PARA {selectedDay?.dia} {selectedDay?.numero}
+                  <h2
+                    className={s.container__funciones__funcion__scroll__title}
+                  >
+                    HORARIOS {cine.nombre} PARA {selectedDay?.dia}{" "}
+                    {selectedDay?.numero}
                   </h2>
                   {info.funciones.map((funcion, index) => (
                     <div
                       className={s.container__funciones__funcion__scroll__tipo}
-                      key={index}>
+                      key={index}
+                    >
                       <h2>{funcion.tipo}</h2>
-                      <div className={s.container__funciones__funcion__scroll__tipo__horarios}>
+                      <div
+                        className={
+                          s.container__funciones__funcion__scroll__tipo__horarios
+                        }
+                      >
                         {funcion.horarios.map((item) => (
                           <Button
                             key={item.id}
@@ -119,13 +140,19 @@ const Schedule = ({
         <Modal>
           <div className={s.modal}>
             <div className={s.modal__closeBtnContainer}>
-              <Button isCloseButton label="x" action={() => setShowModal(false)} />
+              <Button
+                isCloseButton
+                label="x"
+                action={() => setShowModal(false)}
+              />
             </div>
             <h2>ATENCION!</h2>
             <p>
-              Su seleccion es {pelicula.titulo} - {obtenerInfoPorId(cine, selectedFunctionId)?.tipo}
+              Su seleccion es {pelicula.titulo} -{" "}
+              {obtenerInfoPorId(cine, selectedFunctionId)?.tipo}
               <br />
-              {selectedDay!.dia} a las {obtenerInfoPorId(cine, selectedFunctionId)?.hora}Hs.
+              {selectedDay!.dia} a las{" "}
+              {obtenerInfoPorId(cine, selectedFunctionId)?.hora}Hs.
             </p>
             <hr />
             <Button action={handleBuyClick} label="comprar" isBuyButton />

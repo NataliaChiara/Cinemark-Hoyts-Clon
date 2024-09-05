@@ -1,10 +1,20 @@
-import Image from 'next/image';
-import { PeliculaType } from '@/types/model';
-import s from './MovieDetail.module.css';
+import Image from "next/image";
+import { PeliculaType } from "@/types/model";
+import s from "./MovieDetail.module.css";
 
 const MovieDetail = ({ movie }: { movie: PeliculaType }) => {
-  const { titulo, sinopsis, genero, duracion, director, actores, trailer, poster, edad, slug } =
-    movie;
+  const {
+    titulo,
+    sinopsis,
+    genero,
+    duracion,
+    director,
+    actores,
+    trailer,
+    poster,
+    edad,
+    slug,
+  } = movie;
 
   return (
     <div className={s.container}>
@@ -25,9 +35,10 @@ const MovieDetail = ({ movie }: { movie: PeliculaType }) => {
         <iframe
           width="560"
           height="315"
-          src={`https://www.youtube.com/embed/${trailer.split('youtu.be/')[1]}`}
+          src={`https://www.youtube.com/embed/${trailer.split("youtu.be/")[1]}`}
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen></iframe>
+          allowFullScreen
+        ></iframe>
         <h1 className={s.container__trailer__titulo}>{titulo}</h1>
         <p className={s.container__trailer__sinopsis}>{sinopsis}</p>
       </div>

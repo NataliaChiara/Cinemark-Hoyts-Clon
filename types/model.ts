@@ -34,7 +34,7 @@ export interface FuncionType {
 }
 export interface DiaType {
   dia: string;
-  numero: string,
+  numero: string;
   funciones: FuncionType[];
 }
 export interface CineType {

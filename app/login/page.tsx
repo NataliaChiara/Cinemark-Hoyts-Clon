@@ -9,6 +9,5 @@ export default function Login() {
       </div>
       <LoginComponent />
     </div>
-
   );
 }

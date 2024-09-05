@@ -4,6 +4,7 @@ import { useAuth } from '@/context/loginContext';
 
 const Header = () => {
   const { isAuthenticated } = useAuth();
+  console.log(isAuthenticated)
 
   return (
     <div className={s.container}>

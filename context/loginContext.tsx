@@ -3,7 +3,7 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 
 interface AuthContextType {
-  isAuthenticated: boolean;
+  isAuthenticated: boolean | undefined;
   login: (email: string, password: string) => boolean;
   logout: () => void;
 }
@@ -23,7 +23,7 @@ interface AuthProviderProps {
 }
 
 export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState<boolean | undefined>(undefined);
 
   useEffect(() => {
     const storedAuth = localStorage.getItem('isAuthenticated');

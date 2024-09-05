@@ -2,17 +2,13 @@
 
 import { useState } from 'react';
 import { useAuth } from '@/context/loginContext';
-import { useRouter } from 'next/navigation';
 import s from './LoginComponent.module.css';
-import { Button } from '@/components';
 
 const LoginComponent = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const { login, isAuthenticated, logout } = useAuth();
-  const router = useRouter();
-
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();

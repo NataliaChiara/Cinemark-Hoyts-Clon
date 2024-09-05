@@ -8,16 +8,12 @@ import { useRouter } from 'next/navigation';
 export default function Ticketera() {
   const { isAuthenticated } = useAuth();
   const router = useRouter();
-  console.log(isAuthenticated)
-  // useEffect(() => {
-  //   if (!isAuthenticated) {
-  //     router.push('/login');
-  //   }
-  // }, [isAuthenticated, router]);
 
-  // if (!isAuthenticated) {
-  //   return null; // O podrías devolver un componente de carga si lo prefieres
-  // }
+  useEffect(() => {
+    if (isAuthenticated === false) {
+      router.push('/login');
+    }
+  }, [isAuthenticated, router]);
 
   return (
     <Suspense fallback={<div>Loading...</div>}>
